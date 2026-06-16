@@ -56,9 +56,13 @@
   justify-content: center;
 }
 
+.hero-cover picture,
 .hero-cover img {
   width: 100%;
   max-width: 460px;
+}
+
+.hero-cover img {
   height: auto;
 
   border-radius: 28px;
@@ -91,9 +95,13 @@
   transform: translateY(-2px);
 }
 
+.hero-social picture,
 .hero-social img {
   width: 40px;
   height: 40px;
+}
+
+.hero-social img {
   object-fit: contain;
   opacity: 0.72;
   transition: opacity 0.2s ease, filter 0.2s ease;
@@ -181,8 +189,18 @@
   justify-content: center;
 }
 
+.work-image-wrap picture,
 .work-image-wrap img {
   width: 100%;
+}
+
+.work-image-wrap picture {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.work-image-wrap img {
   height: auto;
   object-fit: contain;
   border-radius: 0;
@@ -434,9 +452,13 @@
   justify-content: center;
 }
 
+.partners-grid picture,
 .partners-grid img {
   height: 120px;
   width: auto;
+}
+
+.partners-grid img {
   display: block;
   transition: transform 0.2s ease;
 }

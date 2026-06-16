@@ -15,7 +15,7 @@
   <meta name="author" content="Jens Oliver Barner">
   <meta name="robots" content="index, follow">
 
-  <link rel="canonical" href="https://jensbarner.com/de/buecher/was-wirklich-zaehlt">
+  <link rel="canonical" href="https://jensbarner.com/de/buecher/was-wirklich-zaehlt/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,12 +41,18 @@
     <div class="book-inner">
 
       <aside class="book-sidebar">
-        <img
-          class="book-cover"
-          src="/assets/images/books/was_wirklich_zaehlt.png"
-          alt="Buchcover Was wirklich zählt von Jens Oliver Barner"
-          loading="eager"
-        >
+        <picture>
+          <source srcset="/assets/images/books/was_wirklich_zaehlt.webp" type="image/webp">
+          <img
+            class="book-cover"
+            src="/assets/images/books/was_wirklich_zaehlt.png"
+            alt="Buchcover Was wirklich zählt von Jens Oliver Barner"
+            width="1805"
+            height="2594"
+            loading="eager"
+            fetchpriority="high"
+          >
+        </picture>
 
         <div class="book-buttons">
           <a

@@ -39,7 +39,7 @@
   <meta property="og:description" content="Impulse für ein bewusstes Leben – als Buch, Hörbuch und Musik." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jensbarner.com/" />
-  <meta property="og:image" content="https://jensbarner.github.io/assets/images/books/was_wirklich_zaehlt.png" />
+  <meta property="og:image" content="https://jensbarner.com/assets/images/books/was_wirklich_zaehlt.png" />
   <meta property="og:locale" content="de_DE" />
 
   <!-- TWITTER / X -->
@@ -47,7 +47,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Jens Oliver Barner | Autor und Songwriter" />
   <meta name="twitter:description" content="Bücher, Musik und Impulse für ein bewusstes Leben." />
-  <meta name="twitter:image" content="https://jensbarner.github.io/assets/images/books/was_wirklich_zaehlt.png" />
+  <meta name="twitter:image" content="https://jensbarner.com/assets/images/books/was_wirklich_zaehlt.png" />
 
   <!-- STRUKTURIERTE DATEN (SEO / KI) -->
 
@@ -124,16 +124,13 @@
 
       <div class="hero-actions">
         <a class="button primary" href="/de/ueber-mich/">Über mich</a>
-      <!--
-        <a class="button secondary" href=""></a>
-      -->
         <div class="hero-social" aria-label="Social Media">
           <a
             href="https://instagram.com/jens.barner"
             target="_blank"
             rel="noopener"
             aria-label="Instagram">
-            <img src="/assets/icons/social/social_media_instagram_dark.png" alt="">
+            <img src="/assets/icons/social/social_media_instagram_dark.png" alt="" width="40" height="40" decoding="async">
           </a>
 
           <a
@@ -141,7 +138,7 @@
             target="_blank"
             rel="noopener"
             aria-label="YouTube">
-            <img src="/assets/icons/social/social_media_youtube_dark.png" alt="">
+            <img src="/assets/icons/social/social_media_youtube_dark.png" alt="" width="40" height="40" decoding="async">
           </a>
 
         </div>
@@ -151,11 +148,17 @@
     </div>
 
     <div class="hero-cover">
-      <img
-        src="/assets/images/portraits/barner_korsika.png"
-        alt="Jens Oliver Barner"
-        loading="eager"
-      >
+      <picture>
+        <source srcset="/assets/images/portraits/barner_korsika.webp" type="image/webp">
+        <img
+          src="/assets/images/portraits/barner_korsika.png"
+          alt="Jens Oliver Barner"
+          width="1278"
+          height="959"
+          loading="eager"
+          fetchpriority="high"
+        >
+      </picture>
     </div>
 
   </section>
@@ -212,7 +215,10 @@
 
         <a class="work-cover" href="/de/buecher/was-wirklich-zaehlt/">
           <div class="work-image-wrap">
-            <img src="/assets/images/books/was_wirklich_zaehlt.png" alt="Buchcover Was wirklich zählt von Jens Oliver Barner" loading="lazy">
+            <picture>
+              <source srcset="/assets/images/books/was_wirklich_zaehlt.webp" type="image/webp">
+              <img src="/assets/images/books/was_wirklich_zaehlt.png" alt="Buchcover Was wirklich zählt von Jens Oliver Barner" width="1805" height="2594" loading="lazy" decoding="async">
+            </picture>
           </div>          
 
           <div class="work-text">
@@ -224,7 +230,10 @@
 
         <div class="work-cover coming-soon">
           <div class="work-image-wrap">
-            <img src="/assets/images/books/what_really_matters.png" alt="Buchcover What Really Matters von Jens Oliver Barner" loading="lazy">
+            <picture>
+              <source srcset="/assets/images/books/what_really_matters.webp" type="image/webp">
+              <img src="/assets/images/books/what_really_matters.png" alt="Buchcover What Really Matters von Jens Oliver Barner" width="836" height="1200" loading="lazy" decoding="async">
+            </picture>
           </div>
 
           <div class="work-text">
@@ -236,7 +245,10 @@
 
         <div class="work-cover coming-soon">
           <div class="work-image-wrap">
-            <img src="/assets/images/audiobooks/was_wirklich_zaehlt.png" alt="Cover der Hörbuch-Ausgabe Was wirklich zählt von Jens Oliver Barner" loading="lazy">
+            <picture>
+              <source srcset="/assets/images/audiobooks/was_wirklich_zaehlt.webp" type="image/webp">
+              <img src="/assets/images/audiobooks/was_wirklich_zaehlt.png" alt="Cover der Hörbuch-Ausgabe Was wirklich zählt von Jens Oliver Barner" width="835" height="1200" loading="lazy" decoding="async">
+            </picture>
           </div>
 
           <div class="work-text">
@@ -248,7 +260,10 @@
 
         <a class="work-cover" href="/de/musik/what-really-matters/">
           <div class="work-image-wrap">
-            <img src="/assets/images/songs/what_really_matters.png" alt="Cover des Songs What Really Matters von Jens Oliver Barner" loading="lazy">
+            <picture>
+              <source srcset="/assets/images/songs/what_really_matters.webp" type="image/webp">
+              <img src="/assets/images/songs/what_really_matters.png" alt="Cover des Songs What Really Matters von Jens Oliver Barner" width="1254" height="1254" loading="lazy" decoding="async">
+            </picture>
           </div>
 
           <div class="work-text">
@@ -260,7 +275,10 @@
 
         <a class="work-cover" href="/de/musik/soap-bubble-rise/">
           <div class="work-image-wrap">
-            <img src="/assets/images/songs/soap_bubble_rise.png" alt="Cover des Songs Soap Bubbles Rise von Jens Oliver Barner" loading="lazy">
+            <picture>
+              <source srcset="/assets/images/songs/soap_bubble_rise.webp" type="image/webp">
+              <img src="/assets/images/songs/soap_bubble_rise.png" alt="Cover des Songs Soap Bubbles Rise von Jens Oliver Barner" width="1254" height="1254" loading="lazy" decoding="async">
+            </picture>
           </div>          
 
           <div class="work-text">
@@ -293,30 +311,6 @@
     </blockquote>
   </section>
   
-  <!-- Über mich
-  <section class="author-teaser">
-    <div>
-      <p class="eyebrow">Über den Autor</p>
-
-      <h2>Jens Oliver Barner</h2>
-
-      <p>
-        Jens Oliver Barner schreibt und gestaltet Musik über Fragen,
-        die viele Menschen bewegen: Wie finde ich Orientierung?
-        Was stärkt mich wirklich? Und wie gelingt ein Leben,
-        das nicht nur funktioniert, sondern Bedeutung hat?
-      </p>
-
-      <p>
-        Aus persönlichen Erfahrungen und Beobachtungen entstanden Werke,
-        die Menschen dazu einladen, den Blick wieder auf das Wesentliche zu richten.
-      </p>
-
-      <a class="button secondary" href="/de/ueber-mich/">Mehr erfahren</a>
-    </div>
-  </section>
--->
-
   <!-- Kontakt -->
   <section class="contact-teaser">
     <div>
@@ -343,7 +337,10 @@
       <div class="partners-grid">
 
         <a href="https://illerlive.de/" target="_blank" rel="noopener">
-          <img src="/assets/icons/partners/illerlive-logo.jpeg" alt="IllerLive">
+          <picture>
+            <source srcset="/assets/icons/partners/illerlive-logo.webp" type="image/webp">
+            <img src="/assets/icons/partners/illerlive-logo.jpeg" alt="IllerLive" width="1600" height="1600" loading="lazy" decoding="async">
+          </picture>
         </a>
 
       </div>

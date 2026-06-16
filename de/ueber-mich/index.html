@@ -17,7 +17,7 @@
   <meta name="author" content="Jens Oliver Barner">
   <meta name="robots" content="index, follow">
 
-  <link rel="canonical" href="https://jensbarner.com/de/ueber_mich/">
+  <link rel="canonical" href="https://jensbarner.com/de/ueber-mich/">
 
   <!-- SCHRIFTARTEN -->
 
@@ -39,8 +39,8 @@
   <meta property="og:title" content="Über mich | Jens Oliver Barner">
   <meta property="og:description" content="Jens Oliver Barner ist Autor und Songwriter. Seine Werke beschäftigen sich mit Klarheit, Gesundheit und innerer Stärke.">
   <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://jensbarner.com/ueber_mich/">
-  <meta property="og:image" content="https://jensbarner.com/assets/images/portrait/jens_barner.png">
+  <meta property="og:url" content="https://jensbarner.com/de/ueber-mich/">
+  <meta property="og:image" content="https://jensbarner.com/assets/images/portraits/barner_korsika.png">
   <meta property="og:locale" content="de_DE">
 
   <!-- TWITTER / X -->
@@ -48,7 +48,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Über Jens Oliver Barner">
   <meta name="twitter:description" content="Autor und Songwriter. Bücher, Hörbuch und Musik über Orientierung, Klarheit und innere Stärke.">
-  <meta name="twitter:image" content="https://jensbarner.com/assets/images/portrait/jens_barner.png">
+  <meta name="twitter:image" content="https://jensbarner.com/assets/images/portraits/barner_korsika.png">
 
   <!-- STRUKTURIERTE DATEN (SEO / KI) -->
 
@@ -57,8 +57,8 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Jens Oliver Barner",
-    "url": "https://jensbarner.com/de/ueber_mich/",
-    "image": "https://jensbarner.com/assets/images/portrait/barner_korsika.png",
+    "url": "https://jensbarner.com/de/ueber-mich/",
+    "image": "https://jensbarner.com/assets/images/portraits/barner_korsika.png",
     "jobTitle": "Autor und Songwriter",
     "description": "Jens Oliver Barner ist Autor und Songwriter. Seine Werke beschäftigen sich mit Klarheit, Gesundheit, innerer Stärke und bewusstem Leben.",
     "sameAs": [
@@ -97,26 +97,41 @@
 
         <div class="author-gallery-frame">
 
-            <img
-            class="author-gallery-image is-active"
-            src="/assets/images/portraits/barner_srilanka.png"
-            alt="Jens Oliver Barner in einer Naturlandschaft"
-            loading="eager"
-            >
+            <picture class="author-gallery-image is-active">
+              <source srcset="/assets/images/portraits/barner_srilanka.webp" type="image/webp">
+              <img
+              src="/assets/images/portraits/barner_srilanka.png"
+              alt="Jens Oliver Barner in einer Naturlandschaft"
+              width="1448"
+              height="1086"
+              loading="eager"
+              fetchpriority="high"
+              >
+            </picture>
 
-            <img
-            class="author-gallery-image"
-            src="/assets/images/portraits/barner_korsika.png"
-            alt="Jens Oliver Barner vor einer Fluslandschaft"
-            loading="lazy"
-            >
+            <picture class="author-gallery-image">
+              <source srcset="/assets/images/portraits/barner_korsika.webp" type="image/webp">
+              <img
+              src="/assets/images/portraits/barner_korsika.png"
+              alt="Jens Oliver Barner vor einer Flusslandschaft"
+              width="1278"
+              height="959"
+              loading="lazy"
+              decoding="async"
+              >
+            </picture>
 
-            <img
-            class="author-gallery-image"
-            src="/assets/images/portraits/barner_malediven.png"
-            alt="Jens Oliver Barner an einem tropischen Strand"
-            loading="lazy"
-            >
+            <picture class="author-gallery-image">
+              <source srcset="/assets/images/portraits/barner_malediven.webp" type="image/webp">
+              <img
+              src="/assets/images/portraits/barner_malediven.png"
+              alt="Jens Oliver Barner an einem tropischen Strand"
+              width="1086"
+              height="1449"
+              loading="lazy"
+              decoding="async"
+              >
+            </picture>
 
         </div>
 

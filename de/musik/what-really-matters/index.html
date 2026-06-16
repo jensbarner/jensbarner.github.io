@@ -44,8 +44,7 @@
   <!-- KORREKTUR: OG-URL -->
   <meta property="og:url" content="https://jensbarner.com/de/musik/what-really-matters/" />
 
-  <!-- KORREKTUR: OG-Image -->
-  <meta property="og:image" content="https://jensbarner.com/assets/images/cover_song.png" />
+  <meta property="og:image" content="https://jensbarner.com/assets/images/songs/what_really_matters.png" />
   <meta property="og:locale" content="de_DE" />
 
   <!-- TWITTER / X -->
@@ -54,8 +53,7 @@
   <meta name="twitter:title" content="What Really Matters | Jens Oliver Barner" />
   <meta name="twitter:description" content="Ein ruhiger und emotionaler Song über das, was im Leben wirklich zählt." />
 
-  <!-- KORREKTUR: Twitter-Image -->
-  <meta name="twitter:image" content="https://jensbarner.com/assets/images/cover_song.png" />
+  <meta name="twitter:image" content="https://jensbarner.com/assets/images/songs/what_really_matters.png" />
 
   <!-- STRUKTURIERTE DATEN (SEO / KI) -->
 
@@ -67,7 +65,7 @@
     "alternateName": "Ein Song über das, was im Leben wirklich zählt",
 
     "url": "https://jensbarner.com/de/musik/what-really-matters/",
-    "image": "https://jensbarner.com/assets/images/cover_song.png",
+    "image": "https://jensbarner.com/assets/images/songs/what_really_matters.png",
     "inLanguage": "en",
     "description": "What Really Matters ist ein ruhiger und emotionaler Song von Jens Oliver Barner über Klarheit, innere Stärke und die Frage, was im Leben wirklich zählt.",
 
@@ -121,12 +119,18 @@
 
       <aside class="music-sidebar">
 
-        <img
-          class="music-cover"
-          src="/assets/images/songs/what_really_matters.png"
-          alt="Cover des Songs What Really Matters von Jens Oliver Barner"
-          loading="eager"
-        >
+        <picture>
+          <source srcset="/assets/images/songs/what_really_matters.webp" type="image/webp">
+          <img
+            class="music-cover"
+            src="/assets/images/songs/what_really_matters.png"
+            alt="Cover des Songs What Really Matters von Jens Oliver Barner"
+            width="1254"
+            height="1254"
+            loading="eager"
+            fetchpriority="high"
+          >
+        </picture>
 
         <div class="music-platforms" aria-label="Streaming-Plattformen">
 
