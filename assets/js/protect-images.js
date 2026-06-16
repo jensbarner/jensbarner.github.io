@@ -1,4 +1,3 @@
-<script>
 document.addEventListener("contextmenu", e => {
   if (e.target.tagName === "IMG") {
     e.preventDefault();
@@ -16,6 +15,4 @@ document.addEventListener("dragstart", (event) => {
     event.preventDefault();
   }
 });
-</script>
-
 
