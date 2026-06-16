@@ -34,8 +34,13 @@
   width: 100%;
 }
 
+.book-sidebar picture {
+  aspect-ratio: 1805 / 2594;
+}
+
 .book-cover {
-  height: auto;
+  height: 100%;
+  object-fit: contain;
 
   border-radius: 18px;
 

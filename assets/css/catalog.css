@@ -73,11 +73,19 @@ a.catalog-card:hover {
   width: 100%;
 }
 
+.catalog-cover:not(.is-square) picture {
+  aspect-ratio: 1805 / 2594;
+}
+
 .catalog-cover img {
-  height: auto;
+  height: 100%;
   object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+
+.catalog-cover.is-square picture {
+  aspect-ratio: 1 / 1;
 }
 
 .catalog-cover.is-square img {
