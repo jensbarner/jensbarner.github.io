@@ -1,0 +1,245 @@
+/* ==================================================
+   MUSIC PAGE
+================================================== */
+
+.music-page {
+  padding: 80px 32px 100px;
+}
+
+.music-page-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 80px;
+
+  align-items: start;
+}
+
+/* ==================================================
+   SIDEBAR
+================================================== */
+
+.music-sidebar {
+  position: sticky;
+  top: 120px;
+}
+
+.music-cover {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+
+  box-shadow: var(--shadow-medium);
+
+  margin-bottom: 30px;
+}
+
+.music-platforms {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  max-width: 320px;
+}
+
+.music-platforms a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 48px;
+
+  padding: 12px 18px;
+
+  background: white;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  color: var(--ink);
+
+  font-weight: 700;
+  font-size: 0.95rem;
+
+  transition: all 0.2s ease;
+}
+
+.music-platforms a:hover {
+  background: var(--paper-soft);
+
+  color: var(--accent-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow-soft);
+}
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.music-content {
+  max-width: 760px;
+}
+
+.music-author {
+  color: var(--ink-soft);
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+.music-content h1 {
+  margin-bottom: 18px;
+}
+
+.music-lead {
+  font-size: 1.25rem;
+  line-height: 1.7;
+
+  color: var(--ink);
+
+  font-weight: 500;
+
+  margin-bottom: 34px;
+}
+
+.music-content p {
+  color: var(--ink-soft);
+
+  margin-bottom: 24px;
+}
+
+.music-content strong,
+.music-content em {
+  color: var(--ink);
+}
+
+.music-content strong {
+  font-weight: 700;
+}
+
+.music-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 40px;
+}
+
+/* ==================================================
+   MUSIC VIDEO
+================================================== */
+.music-video {
+  margin-top: 40px;
+}
+
+.music-video iframe {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 16 / 9;
+
+  border: 0;
+  border-radius: 18px;
+
+  box-shadow: var(--shadow-soft);
+}
+
+/* ==================================================
+   QUOTE
+================================================== */
+
+.music-page + .quote-section {
+  margin-top: 30px;
+}
+
+/* ==================================================
+   MUSIC PAGE
+================================================== */
+
+.music-page ~ .author-teaser {
+  padding-top: 90px;
+}
+
+/* ==================================================
+   MOBILE TABLET
+================================================== */
+
+@media (max-width: 1000px) {
+
+  .music-page-inner {
+    gap: 50px;
+  }
+
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 900px) {
+
+  .music-page {
+    padding: 60px 24px 80px;
+  }
+
+  .music-page-inner {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .music-sidebar {
+    position: static;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .music-cover {
+    max-width: 280px;
+  }
+
+  .music-platforms {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .music-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .music-cta {
+    justify-content: center;
+  }
+
+}
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  .music-page {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .music-lead {
+    font-size: 1.1rem;
+  }
+
+  .music-platforms a {
+    min-height: 44px;
+    font-size: 0.9rem;
+  }
+
+}

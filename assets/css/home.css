@@ -1,0 +1,556 @@
+/* ==================================================
+   HOME PAGE – Clean & modern Version
+   Fokus:
+   - Klarer Aufbau
+   - Ruhige Typografie
+   - Minimalistische Schatten
+   - Stabiles, intuitives Carousel
+================================================== */
+
+
+/* ==================================================
+   HERO SECTION
+   Zweispaltiges Layout: links Text, rechts Cover
+================================================== */
+
+.compact-hero {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 60px 32px 48px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 430px;
+  gap: 76px;
+
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 680px;
+}
+
+.hero-text h1 {  
+  font-size: clamp(2rem, 3.5vw, 3.3rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  max-width: 540px;
+  margin-bottom: 22px;
+}
+
+.hero-subline {
+  max-width: 620px;
+  font-size: 1.12rem;
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.hero-cover {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-cover img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+
+  border-radius: 28px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+
+/* ==================================================
+   HERO SOCIAL ICONS
+================================================== */
+
+.hero-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.hero-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.hero-social a:hover {
+  transform: translateY(-2px);
+}
+
+.hero-social img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  opacity: 0.72;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.hero-social a:hover img {
+  opacity: 1;
+  filter: brightness(0.75);
+}
+
+
+/* ==================================================
+   WERKE / CAROUSEL
+   Clean, stabil, ohne Sprünge
+================================================== */
+
+.works-section {
+  padding: 20px 32px 100px;
+}
+
+.works-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+/* Wrapper:
+   - overflow:hidden verhindert horizontales „Auslaufen“
+   - padding erzeugt ruhigen Weißraum links/rechts
+*/
+.works-carousel-wrap {
+  position: relative;
+  margin-top: 50px;
+  overflow: hidden;
+  padding: 0 100px;
+}
+
+/* Horizontales Flex‑Layout:
+   - kein justify-content:center (Snap soll dominieren)
+   - Snap‑Scrolling für intuitive Navigation
+*/
+.works-carousel {
+  display: flex;
+  gap: 80px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 28px 0;
+  scrollbar-width: none;
+}
+
+.works-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Einzelnes Cover:
+   - feste Breite für konsistente Optik
+   - Snap auf Mitte
+*/
+.work-cover {
+  flex: 0 0 auto;
+  width: 180px;
+
+  text-decoration: none;
+  color: inherit;
+
+  overflow: visible;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+
+  position: relative;
+}
+
+/* Bildbereich:
+   - definierte Höhe
+   - Bild unten ausgerichtet für ruhige Linie
+*/
+.work-image-wrap {
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.work-image-wrap img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+
+  /* Grundschatten sehr dezent */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+
+  transition:
+    transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 240ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 180ms ease,
+    filter 180ms ease;
+  will-change: transform, box-shadow;
+}
+
+/* Hover:
+   - leichter Lift
+   - moderates Scale
+   - weicher Shadow Bloom
+*/
+.work-cover:hover img {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow:
+    0 18px 28px rgba(0,0,0,0.12),
+    0 6px 10px rgba(0,0,0,0.08);
+}
+
+/* Coming‑Soon bewusst zurückhaltender */
+.work-cover.coming-soon:hover img {
+  transform: translateY(-2px) scale(1.02);
+  opacity: 0.85;
+  filter: grayscale(55%);
+}
+
+/* Typ‑Label (Buch, Musik, etc.) */
+.work-type {
+  display: block;
+  margin-top: 14px;
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Coming‑Soon Label */
+.coming-soon {
+  display: block;
+  margin-top: 4px;
+  color: var(--accent-dark);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+}
+
+/* Titel */
+.work-cover h3 {
+  margin-top: 6px;
+  min-height: 2.8em;
+}
+
+/* Textbox unter Cover */
+.work-text {
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.work-text .coming-soon {
+  margin-top: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent-dark);
+  opacity: 0.75;
+  min-height: 1.2em;
+  display: block;
+}
+
+
+/* ==================================================
+   CAROUSEL BUTTONS
+   Dezent, modern, gut lesbar
+================================================== */
+
+.works-gallery-button {
+  position: absolute;
+  top: 42%;
+  z-index: 5;
+
+  width: 46px;
+  height: 46px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+
+  color: var(--ink);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: translateY(-50%);
+  transition: 0.2s ease;
+}
+
+.works-gallery-button:hover {
+  color: var(--accent-dark);
+  transform: translateY(-50%) scale(1.04);
+}
+
+.works-gallery-prev {
+  left: 0;
+}
+
+.works-gallery-next {
+  right: 0;
+}
+
+
+/* ==================================================
+   THEMEN GRID
+================================================== */
+
+.themes {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 32px 35px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.themes article {
+  padding: 34px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.themes span {
+  display: block;
+  color: var(--accent-dark);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.themes p {
+  color: var(--ink-soft);
+}
+
+
+/* ==================================================
+   ZITAT SECTION
+================================================== */
+
+.quote-section {
+  padding: 100px 32px;
+  background: white;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.quote-section blockquote {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3vw, 3.4rem);
+  line-height: 1.2;
+}
+
+
+/* ==================================================
+   AUTOR TEASER
+================================================== */
+
+.author-teaser {
+  text-align: left;
+  padding: 100px 32px;
+}
+
+.author-teaser > div {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.author-teaser p {
+  color: var(--ink-soft);
+}
+
+.author-teaser p + p {
+  margin-top: 18px;
+}
+
+.author-teaser .button {
+  display: table;
+  margin: 28px auto 0;
+}
+
+
+/* ==================================================
+   KONTAKT TEASER
+================================================== */
+
+.contact-teaser {
+  max-width: var(--max);
+  margin: 0 auto 100px;
+  padding: 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  background: var(--ink);
+  border-radius: calc(var(--radius) + 6px);
+  color: white;
+}
+
+.contact-teaser h2 {
+  color: white;
+}
+
+.contact-teaser p {
+  color: rgba(255,255,255,0.78);
+}
+
+.contact-teaser .button {
+  flex-shrink: 0;
+}
+
+
+/* ==================================================
+   PARTNERS LOGOS
+================================================== */
+
+.partners-grid {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.partners-grid img {
+  height: 120px;
+  width: auto;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.partners-grid img:hover {
+  transform: scale(1.05);
+}
+
+
+/* ==================================================
+   MOBILE BREAKPOINTS
+================================================== */
+
+@media (max-width: 1000px) {
+  .compact-hero {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 88px;
+    padding-bottom: 78px;
+  }
+
+  .hero-text {
+    max-width: 760px;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-social {
+    justify-content: center;
+  }
+
+  .hero-cover {
+    order: -1;
+  }
+
+  .hero-cover img {
+    max-width: 360px;
+  }
+
+  .themes {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-teaser {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .compact-hero {
+    padding: 66px 24px 64px;
+    gap: 36px;
+  }
+
+  .hero-cover img {
+    max-width: 300px;
+    border-radius: 22px;
+  }
+
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .works-section,
+  .themes,
+  .author-teaser,
+  .quote-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .works-carousel-wrap {
+    margin-top: 50px;
+    padding: 0 40px;
+  }
+
+  .works-carousel {
+    gap: 22px;
+    padding: 24px 0 24px;
+  }
+
+  .work-cover {
+    width: 165px;
+  }
+
+  .work-image-wrap {
+    height: 220px;
+  }
+
+  .work-cover h3 {
+    font-size: 1rem;
+  }
+
+  .works-gallery-prev {
+    left: 10px;
+  }
+
+  .works-gallery-next {
+    right: 10px;
+  }
+
+  .contact-teaser {
+    margin-left: 24px;
+    margin-right: 24px;
+    padding: 34px 28px;
+  }
+}

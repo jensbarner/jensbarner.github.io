@@ -1,0 +1,365 @@
+/* ==================================================
+   BOOK PAGE
+================================================== */
+
+.book-page {
+  padding: 110px 32px;
+}
+
+.book-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 70px;
+
+  align-items: start;
+}
+
+/* ==================================================
+   SIDEBAR
+================================================== */
+
+.book-sidebar {
+  position: sticky;
+  top: 120px;
+
+  text-align: center;
+}
+
+.book-cover {
+  width: 100%;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 25px 55px rgba(0,0,0,0.18);
+
+  margin-bottom: 28px;
+}
+
+.book-sidebar .button {
+  width: 100%;
+}
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.book-content {
+  max-width: 760px;
+}
+
+.book-author {
+  color: var(--ink-soft);
+
+  font-size: 1rem;
+
+  margin-bottom: 8px;
+}
+
+.book-content h1 {
+  margin-bottom: 18px;
+}
+
+.book-subtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+
+  color: var(--ink);
+
+  margin-bottom: 28px;
+
+  line-height: 1.4;
+}
+
+.book-topic {
+  font-size: 1.15rem;
+
+  margin-bottom: 36px;
+
+  color: var(--ink-soft);
+}
+
+.book-topic span:first-child {
+  color: #4a79ff;
+}
+
+.book-topic span:last-child {
+  color: var(--accent);
+}
+
+.book-content p {
+  color: var(--ink-soft);
+
+  margin-bottom: 24px;
+
+  font-size: 1.08rem;
+
+  line-height: 1.9;
+}
+
+.book-content em {
+  color: var(--ink);
+
+  font-style: italic;
+}
+
+/* ==================================================
+   BOOK BUTTONS
+================================================== */
+
+.book-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.book-buttons .button {
+  width: 100%;
+}
+
+/* ==================================================
+   INHALTSVERZEICHNIS
+================================================== */
+
+.book-toc {
+  margin-top: 70px;
+  padding-top: 50px;
+
+  border-top: 1px solid var(--line);
+}
+
+.book-toc h2 {
+  margin-bottom: 24px;
+}
+
+.book-toc-list {
+  list-style: none;
+  padding: 0;
+}
+
+.book-toc-list li {
+  position: relative;
+
+  padding-left: 20px;
+  margin-bottom: 12px;
+
+  color: var(--ink-soft);
+}
+
+.book-toc-list li::before {
+  content: "•";
+
+  position: absolute;
+  left: 0;
+
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+/* ==================================================
+   BOOK DIVIDER
+================================================== */
+
+.book-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 0 50px;
+}
+
+.book-divider::before,
+.book-divider::after {
+  content: "";
+  flex: 1;              /* statt fester Breite */
+  height: 1px;
+  background: var(--line);
+}
+
+.book-divider span {
+  margin: 0 20px;
+  color: var(--accent-dark);
+  font-size: 1rem;
+  white-space: nowrap;   /* verhindert Zeilenumbruch */
+}
+
+
+/* ==================================================
+   QUOTE BLOCK
+================================================== */
+
+.book-highlight {
+  margin: 50px 0;
+
+  padding: 36px;
+
+  background: rgba(255,255,255,0.75);
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow-soft);
+}
+
+.book-highlight blockquote {
+  font-family: var(--font-serif);
+
+  font-size: 1.6rem;
+
+  line-height: 1.5;
+
+  color: var(--ink);
+
+  text-align: center;
+}
+
+/* ==================================================
+   CTA
+================================================== */
+
+.book-cta {
+  margin-top: 60px;
+
+  padding-top: 40px;
+
+  border-top: 1px solid var(--line);
+
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ==================================================
+   LESEPROBE
+================================================== */
+
+.book-subtitle {
+  color: var(--ink-soft);
+
+  font-size: 1.05rem;
+  font-weight: 500;
+
+  margin-bottom: 36px;
+}
+
+.book-content p {
+  color: var(--ink-soft);
+
+  margin-bottom: 22px;
+}
+
+.book-content strong,
+.book-content em {
+  color: var(--ink);
+}
+
+.book-highlight {
+  margin: 50px 0;
+
+  padding: 40px;
+
+  background: rgba(255,255,255,0.8);
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow-soft);
+}
+
+.book-highlight blockquote {
+  font-family: var(--font-serif);
+
+  font-size: clamp(1.4rem, 2vw, 2rem);
+
+  line-height: 1.4;
+
+  text-align: center;
+
+  color: var(--ink);
+}
+
+.book-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 60px;
+}
+
+/* ==================================================
+   LESEPROBE LESBARKEIT
+================================================== */
+
+.book-content {
+  max-width: 760px;
+}
+
+.book-content > p {
+  max-width: 720px;
+}
+
+.book-content h1 {
+  margin-bottom: 10px;
+}
+
+
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 900px) {
+
+  .book-page {
+    padding: 80px 24px;
+  }
+
+  .book-inner {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .book-sidebar {
+    position: static;
+
+    max-width: 260px;
+
+    margin: 0 auto;
+  }
+
+  .book-content {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .book-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .book-content p {
+    font-size: 1rem;
+  }
+
+  .book-cta {
+    justify-content: center;
+  }
+
+  .book-highlight {
+    padding: 30px 24px;
+    margin: 40px 0;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .book-highlight blockquote {
+    font-size: 1.25rem;
+  }
+
+}
