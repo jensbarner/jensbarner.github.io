@@ -26,9 +26,14 @@
   top: 120px;
 }
 
+.music-sidebar picture,
 .music-cover {
+  display: block;
   width: 100%;
   max-width: 320px;
+}
+
+.music-cover {
   height: auto;
 
   box-shadow: var(--shadow-medium);
