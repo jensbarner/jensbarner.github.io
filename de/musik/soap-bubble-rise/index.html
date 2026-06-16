@@ -86,7 +86,52 @@
 
 <body>
 
-<div class="header-include" data-include="/assets/includes/de/header.html"></div>
+<header class="site-header">
+  <div class="site-header-inner">
+
+    <a class="logo" href="/">
+      Jens Oliver Barner
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span>Menü</span>
+    </button>
+
+    <nav class="navigation" id="primary-navigation" aria-label="Hauptnavigation">
+
+      <div class="nav-dropdown">
+        <a href="/de/buecher/" class="nav-dropdown-trigger">Bücher</a>
+        <div class="nav-dropdown-menu">
+          <a href="/de/buecher/">Alle Bücher</a>
+          <a href="/de/buecher/was-wirklich-zaehlt/">Was wirklich zählt</a>
+          <span class="nav-disabled">What Really Matters · Geplant</span>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <a href="/de/audiobooks/" class="nav-dropdown-trigger">Hörbücher</a>
+        <div class="nav-dropdown-menu">
+          <a href="/de/audiobooks/">Alle Hörbücher</a>
+          <span class="nav-disabled">Was wirklich zählt · Geplant</span>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <a href="/de/musik/" class="nav-dropdown-trigger">Musik</a>
+        <div class="nav-dropdown-menu">
+          <a href="/de/musik/">Alle Musikstücke</a>
+          <a href="/de/musik/what-really-matters/">What Really Matters</a>
+          <a href="/de/musik/soap-bubble-rise/">Soap Bubble Rise</a>
+        </div>
+      </div>
+
+      <a href="/de/ueber-mich/">Über mich</a>
+      <a href="/de/kontakt/">Kontakt</a>
+
+    </nav>
+
+  </div>
+</header>
 
 <main>
 
@@ -142,17 +187,6 @@
           Zerbrechlichkeit und Schönheit des Lebens wieder.
         </p>
 
-        <div class="music-video">
-
-          <iframe
-            src=""
-            title="Soap Bubble Rise"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-
-        </div>
-
       </article>
 
     </div>
@@ -168,10 +202,48 @@
 
 </main>
 
-<div class="footer-include" data-include="/assets/includes/de/footer.html"></div>
+<footer class="site-footer">
 
-<script src="/assets/js/include.js"></script>
-<script src="/assets/js/protect-images.js"></script>
+  <div class="site-footer-inner compact-footer">
+
+    <div class="footer-column">
+      <h3>Entdecken</h3>
+      <a href="/#werke">Veröffentlichungen</a>
+      <a href="/de/buecher/">Bücher</a>
+      <a href="/de/audiobooks/">Hörbücher</a>
+      <a href="/de/musik/">Musik</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Navigation</h3>
+      <a href="/de/ueber-mich/">Über mich</a>
+      <a href="/de/kontakt/">Kontakt</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Social Media</h3>
+      <a href="https://www.youtube.com/@jens.barner" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://instagram.com/jens.barner" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://open.spotify.com/album/3eO1ex7RR51slOCPSiKWjK" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://music.youtube.com/watch?v=MegAFO---bk" target="_blank" rel="noopener">YouTube Music</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Rechtliches</h3>
+      <a href="/de/impressum/">Impressum</a>
+      <a href="/de/datenschutz/">Datenschutz</a>
+    </div>
+
+  </div>
+
+  <div class="site-footer-bottom compact-footer-bottom">
+    <p>© 2026 Jens Oliver Barner</p>
+  </div>
+
+</footer>
+
+
+<script src="/assets/js/site.js" defer></script>
 
 </body>
 </html>
