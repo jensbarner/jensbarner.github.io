@@ -1,54 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const carousel = document.querySelector(".works-carousel");
   const prevBtn = document.querySelector(".works-gallery-prev");
   const nextBtn = document.querySelector(".works-gallery-next");
 
   if (!carousel || !prevBtn || !nextBtn) return;
 
-  const originalItems = [...carousel.children];
+  function getScrollAmount() {
+    const firstItem = carousel.querySelector(".work-cover");
+    if (!firstItem) return 0;
 
-  originalItems.forEach(item => {
-    carousel.appendChild(item.cloneNode(true));
+    const styles = window.getComputedStyle(carousel);
+    const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+
+    return firstItem.offsetWidth + gap;
+  }
+
+  function scrollCarousel(direction) {
+    const scrollAmount = getScrollAmount();
+    if (!scrollAmount) return;
+
+    carousel.scrollBy({
+      left: direction * scrollAmount,
+      behavior: "smooth"
+    });
+  }
+
+  prevBtn.addEventListener("click", () => {
+    scrollCarousel(-1);
   });
 
-  const firstItem = carousel.querySelector(".work-cover");
-
-  const scrollAmount = firstItem
-    ? firstItem.offsetWidth + 56
-    : 276;
-
-  const originalWidth = originalItems.length * scrollAmount;
-
-  function checkLoop() {
-    if (carousel.scrollLeft >= originalWidth) {
-      carousel.scrollLeft = carousel.scrollLeft - originalWidth;
-    }
-
-    if (carousel.scrollLeft <= 0) {
-      carousel.scrollLeft = originalWidth + carousel.scrollLeft;
-    }
-  }
-
-  function scrollNext() {
-    carousel.scrollBy({
-      left: scrollAmount,
-      behavior: "smooth"
-    });
-
-    setTimeout(checkLoop, 400);
-  }
-
-  function scrollPrev() {
-    carousel.scrollBy({
-      left: -scrollAmount,
-      behavior: "smooth"
-    });
-
-    setTimeout(checkLoop, 400);
-  }
-
-  nextBtn.addEventListener("click", scrollNext);
-  prevBtn.addEventListener("click", scrollPrev);
-
+  nextBtn.addEventListener("click", () => {
+    scrollCarousel(1);
+  });
 });
