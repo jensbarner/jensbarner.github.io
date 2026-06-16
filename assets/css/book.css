@@ -28,8 +28,14 @@
   text-align: center;
 }
 
+.book-sidebar picture,
 .book-cover {
+  display: block;
   width: 100%;
+}
+
+.book-cover {
+  height: auto;
 
   border-radius: 18px;
 
