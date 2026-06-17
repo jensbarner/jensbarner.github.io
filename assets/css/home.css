@@ -242,6 +242,10 @@
   background: linear-gradient(90deg, var(--signature), var(--accent));
 }
 
+.work-cover.coming-soon::before {
+  display: none;
+}
+
 a.work-cover {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
