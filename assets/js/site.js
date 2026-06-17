@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const analyticsConfig = {
-  measurementId: "G-XXXXXXXXXX",
+  measurementId: "G-R13Q2JEHFQ",
   storageKey: "job_cookie_consent_v1"
 };
 
@@ -178,7 +178,7 @@ function denyAnalyticsConsent() {
 function loadGoogleAnalytics() {
   const measurementId = analyticsConfig.measurementId;
 
-  if (!/^G-[A-Z0-9]+$/.test(measurementId) || measurementId === "G-XXXXXXXXXX") {
+  if (!/^G-[A-Z0-9]{6,}$/.test(measurementId)) {
     return;
   }
 
