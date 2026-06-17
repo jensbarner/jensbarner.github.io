@@ -363,6 +363,7 @@ section[id] {
   align-items: center;
   justify-content: center;
 
+  min-height: 46px;
   padding: 14px 25px;
 
   border-radius: 999px;
@@ -619,6 +620,19 @@ section[id] {
 @media (max-width: 520px) {
   h1 {
     font-size: clamp(2.15rem, 11vw, 3.1rem);
+  }
+
+  .site-header-inner {
+    padding: 18px 20px;
+  }
+
+  .logo {
+    font-size: 1.12rem;
+  }
+
+  .navigation {
+    left: 16px;
+    right: 16px;
   }
 
   .site-footer-inner {

@@ -36,18 +36,22 @@
 
 .book-sidebar picture {
   aspect-ratio: 1805 / 2594;
+  padding: 18px;
+  background:
+    linear-gradient(145deg, rgba(47,102,95,0.08), rgba(182,138,90,0.07));
+  border: 1px solid rgba(47,102,95,0.10);
+  border-radius: var(--radius);
+  margin-bottom: 28px;
 }
 
 .book-cover {
   height: 100%;
   object-fit: contain;
 
-  border-radius: 12px;
+  border-radius: var(--radius);
 
   box-shadow:
     0 25px 55px rgba(32,53,66,0.16);
-
-  margin-bottom: 28px;
 }
 
 .book-sidebar .button {
@@ -350,7 +354,7 @@
   .book-sidebar {
     position: static;
 
-    max-width: 260px;
+    max-width: 280px;
 
     margin: 0 auto;
   }
@@ -372,6 +376,10 @@
     justify-content: center;
   }
 
+  .book-cta .button {
+    flex: 1 1 220px;
+  }
+
   .book-highlight {
     padding: 30px 24px;
     margin: 40px 0;
@@ -384,6 +392,15 @@
 
   .book-highlight blockquote {
     font-size: 1.25rem;
+  }
+
+  .book-page {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .book-sidebar {
+    max-width: 260px;
   }
 
 }

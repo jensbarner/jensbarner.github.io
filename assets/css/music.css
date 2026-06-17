@@ -33,12 +33,20 @@
   max-width: 320px;
 }
 
+.music-sidebar picture {
+  padding: 18px;
+  background:
+    linear-gradient(145deg, rgba(47,102,95,0.08), rgba(182,138,90,0.07));
+  border: 1px solid rgba(47,102,95,0.10);
+  border-radius: var(--radius);
+  margin-bottom: 30px;
+}
+
 .music-cover {
   height: auto;
+  border-radius: var(--radius);
 
   box-shadow: 0 24px 50px rgba(32,53,66,0.16);
-
-  margin-bottom: 30px;
 }
 
 .music-platforms {
@@ -243,6 +251,10 @@
     justify-content: center;
   }
 
+  .music-video iframe {
+    max-width: 100%;
+  }
+
 }
 
 /* ==================================================
@@ -263,6 +275,11 @@
   .music-platforms a {
     min-height: 44px;
     font-size: 0.9rem;
+  }
+
+  .music-sidebar picture,
+  .music-cover {
+    max-width: 260px;
   }
 
 }

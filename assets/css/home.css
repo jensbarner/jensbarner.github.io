@@ -111,7 +111,9 @@
   position: absolute;
   inset: 28px -18px -18px 34px;
   border: 1px solid rgba(47,102,95,0.20);
-  border-radius: 14px;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(47,102,95,0.08), rgba(182,138,90,0.08));
 }
 
 .hero-cover picture,
@@ -245,6 +247,11 @@ a.work-cover:hover {
   align-items: flex-end;
   justify-content: center;
   margin-bottom: 20px;
+  padding: 18px 16px;
+  background:
+    linear-gradient(145deg, rgba(47,102,95,0.08), rgba(182,138,90,0.07));
+  border: 1px solid rgba(47,102,95,0.10);
+  border-radius: var(--radius);
 }
 
 .work-image-wrap picture,
@@ -261,7 +268,7 @@ a.work-cover:hover {
 .work-image-wrap img {
   width: auto;
   max-width: 100%;
-  max-height: 245px;
+  max-height: 215px;
   height: auto;
   object-fit: contain;
   border-radius: 0;
@@ -681,6 +688,10 @@ a.work-cover .work-action::after {
     width: 100%;
   }
 
+  .hero-social {
+    margin-top: 6px;
+  }
+
   .works-section,
   .themes,
   .overview-links,
@@ -718,5 +729,33 @@ a.work-cover .work-action::after {
     margin-left: 24px;
     margin-right: 24px;
     padding: 34px 28px;
+  }
+}
+
+@media (max-width: 420px) {
+  .compact-hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-cover img {
+    max-width: 260px;
+  }
+
+  .works-section,
+  .themes,
+  .overview-links,
+  .author-teaser,
+  .quote-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .work-image-wrap {
+    height: 220px;
+  }
+
+  .work-image-wrap img {
+    max-height: 195px;
   }
 }

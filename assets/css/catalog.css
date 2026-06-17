@@ -87,6 +87,11 @@ a.catalog-card:hover {
   align-items: center;
   justify-content: center;
   min-height: 220px;
+  padding: 18px;
+  background:
+    linear-gradient(145deg, rgba(47,102,95,0.08), rgba(182,138,90,0.07));
+  border: 1px solid rgba(47,102,95,0.10);
+  border-radius: var(--radius);
 }
 
 .catalog-cover picture,
@@ -102,7 +107,7 @@ a.catalog-card:hover {
 .catalog-cover img {
   height: 100%;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: var(--radius);
   box-shadow: 0 16px 32px rgba(32,53,66,0.14);
 }
 
@@ -111,7 +116,7 @@ a.catalog-card:hover {
 }
 
 .catalog-cover.is-square img {
-  border-radius: 0;
+  border-radius: var(--radius);
 }
 
 .catalog-meta {
@@ -190,5 +195,22 @@ a.catalog-card .catalog-status::after {
     width: min(220px, 100%);
     min-height: 0;
     margin: 0 auto;
+    padding: 14px;
+  }
+
+  .catalog-actions .button {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 420px) {
+  .catalog-page {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .catalog-card {
+    padding: 20px;
   }
 }
