@@ -51,9 +51,18 @@
   text-transform: uppercase;
 }
 
+.book-review-card .book-review-stars {
+  margin-top: 8px;
+  color: #b68a5a;
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+}
+
 .book-review-card strong {
   display: block;
-  margin: 8px 0 10px;
+  margin: 10px 0 10px;
   color: var(--ink);
   font-family: var(--font-serif);
   font-size: 1.08rem;
@@ -61,46 +70,6 @@
 }
 
 .book-review-card em::after {
-  content: " →";
-}
-
-.book-review-note {
-  margin: 0 0 34px;
-  padding: 28px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(251,250,245,0.88));
-  border: 1px solid rgba(47,102,95,0.16);
-  border-radius: var(--radius);
-  box-shadow: 0 14px 34px rgba(32,53,66,0.07);
-}
-
-.book-review-note .eyebrow {
-  margin-bottom: 10px;
-}
-
-.book-review-note h2 {
-  margin-bottom: 12px;
-  font-size: clamp(1.35rem, 2vw, 1.75rem);
-  line-height: 1.2;
-}
-
-.book-review-note p {
-  margin-bottom: 16px;
-  color: var(--ink-soft);
-  font-size: 1rem;
-  line-height: 1.75;
-}
-
-.book-review-note a {
-  color: var(--signature);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.book-review-note a::after {
   content: " →";
 }
 
