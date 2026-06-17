@@ -183,15 +183,12 @@ section[id] {
 
 .logo::before {
   content: "";
-  width: 18px;
-  height: 18px;
-  border: 1px solid var(--signature);
-  border-radius: 50% 50% 50% 0;
-  background:
-    radial-gradient(circle at 55% 45%, var(--accent) 0 2px, transparent 3px),
-    var(--surface);
-  box-shadow: 0 6px 16px rgba(47,102,95,0.14);
-  transform: rotate(-45deg);
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  background: var(--signature);
+  -webkit-mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
+  mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
 }
 
 .nav-toggle {
