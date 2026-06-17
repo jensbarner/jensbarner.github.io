@@ -172,9 +172,9 @@ section[id] {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.54rem;
   font-weight: 700;
   text-decoration: none;
   color: var(--signature-dark);
@@ -183,9 +183,9 @@ section[id] {
 
 .logo::before {
   content: "";
-  width: 28px;
-  height: 28px;
-  flex: 0 0 28px;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
   background: var(--signature-dark);
   -webkit-mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
   mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
@@ -633,7 +633,13 @@ section[id] {
   }
 
   .logo {
-    font-size: 1.3rem;
+    font-size: 1.28rem;
+  }
+
+  .logo::before {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
   }
 
   .nav-toggle {
@@ -742,7 +748,14 @@ section[id] {
   }
 
   .logo {
-    font-size: 1.12rem;
+    gap: 10px;
+    font-size: 1.08rem;
+  }
+
+  .logo::before {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
   }
 
   .navigation {

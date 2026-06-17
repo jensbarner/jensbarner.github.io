@@ -9,6 +9,16 @@
   gap: 12px;
 }
 
+.music-platforms::before {
+  content: "Hören auf";
+  color: var(--signature);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .music-platforms a {
   display: flex;
   justify-content: center;
@@ -40,7 +50,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 40px;
+  margin-top: 44px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
 }
 
 .music-page + .quote-section {
