@@ -48,10 +48,14 @@ function initAuthorGallery() {
 
   function showSlide(index) {
     images.forEach(image => image.classList.remove("is-active"));
-    dots.forEach(dot => dot.classList.remove("is-active"));
+    dots.forEach(dot => {
+      dot.classList.remove("is-active");
+      dot.removeAttribute("aria-current");
+    });
 
     images[index].classList.add("is-active");
     dots[index].classList.add("is-active");
+    dots[index].setAttribute("aria-current", "true");
     current = index;
   }
 
@@ -61,7 +65,12 @@ function initAuthorGallery() {
 
   function restartTimer() {
     if (timer) window.clearInterval(timer);
-    timer = window.setInterval(nextSlide, 5000);
+    timer = window.setInterval(nextSlide, 8000);
+  }
+
+  function stopTimer() {
+    if (timer) window.clearInterval(timer);
+    timer = null;
   }
 
   next.addEventListener("click", () => {
@@ -80,6 +89,11 @@ function initAuthorGallery() {
       restartTimer();
     });
   });
+
+  gallery.addEventListener("mouseenter", stopTimer);
+  gallery.addEventListener("mouseleave", restartTimer);
+  gallery.addEventListener("focusin", stopTimer);
+  gallery.addEventListener("focusout", restartTimer);
 
   restartTimer();
 }
