@@ -1,0 +1,203 @@
+/* ==================================================
+   SHARED DETAIL PAGES
+   Buch- und Musik-Unterseiten sollen identisch wirken.
+================================================== */
+
+.book-page,
+.music-page {
+  padding: 96px 32px 104px;
+}
+
+.book-inner,
+.music-page-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 80px;
+
+  align-items: start;
+}
+
+.book-sidebar,
+.music-sidebar {
+  position: sticky;
+  top: 120px;
+}
+
+.book-sidebar picture,
+.music-sidebar picture {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  padding: 18px;
+
+  background:
+    linear-gradient(145deg, rgba(47,102,95,0.08), rgba(182,138,90,0.07));
+  border: 1px solid rgba(47,102,95,0.10);
+  border-radius: var(--radius);
+  margin-bottom: 30px;
+}
+
+.book-cover,
+.music-cover {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  border-radius: var(--radius);
+  box-shadow: 0 24px 50px rgba(32,53,66,0.16);
+}
+
+.book-cover {
+  height: 100%;
+  object-fit: contain;
+}
+
+.music-cover {
+  height: auto;
+}
+
+.book-buttons,
+.music-platforms {
+  width: 100%;
+  max-width: 320px;
+}
+
+.book-content,
+.music-content {
+  position: relative;
+  max-width: 760px;
+}
+
+.book-content::before,
+.music-content::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 2px;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, var(--signature), var(--accent));
+}
+
+.book-author,
+.music-author {
+  color: var(--signature);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.book-content h1,
+.music-content h1 {
+  margin-bottom: 18px;
+}
+
+.book-subtitle,
+.music-lead {
+  color: var(--ink);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  text-wrap: balance;
+}
+
+.book-topic {
+  color: var(--signature);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  margin-bottom: 34px;
+  text-transform: uppercase;
+}
+
+.music-lead {
+  margin-bottom: 34px;
+}
+
+.book-content p,
+.music-content p {
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+  line-height: 1.9;
+  margin-bottom: 22px;
+  max-width: 720px;
+}
+
+.book-content strong,
+.book-content em,
+.music-content strong,
+.music-content em {
+  color: var(--ink);
+}
+
+.music-video {
+  margin-top: 40px;
+}
+
+.music-video iframe {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 900px) {
+  .book-page,
+  .music-page {
+    padding: 80px 24px;
+  }
+
+  .book-inner,
+  .music-page-inner {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .book-sidebar,
+  .music-sidebar {
+    position: static;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .book-content,
+  .music-content {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .book-subtitle,
+  .music-lead {
+    font-size: 1.1rem;
+  }
+
+  .book-content p,
+  .music-content p {
+    font-size: 1rem;
+  }
+
+  .music-video iframe {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .book-page,
+  .music-page {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .book-sidebar,
+  .music-sidebar {
+    max-width: 260px;
+  }
+}
