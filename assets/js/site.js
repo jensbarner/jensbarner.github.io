@@ -91,13 +91,17 @@ function initCookieConsent() {
   if (storedConsent === "accepted") {
     grantAnalyticsConsent();
     loadGoogleAnalytics();
-  } else if (storedConsent !== "rejected") {
+  } else if (storedConsent !== "rejected" && !isPrivacyInformationPage()) {
     showCookieDialog();
   }
 
   document.querySelectorAll("[data-cookie-settings]").forEach(button => {
     button.addEventListener("click", () => showCookieDialog(true));
   });
+}
+
+function isPrivacyInformationPage() {
+  return window.location.pathname === "/de/datenschutz/";
 }
 
 function initGoogleConsent() {
