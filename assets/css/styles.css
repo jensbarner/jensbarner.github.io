@@ -136,6 +136,43 @@ section[id] {
   scroll-margin-top: 110px;
 }
 
+.author-page,
+.catalog-page,
+.contact-page,
+.book-page,
+.music-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.author-page::after,
+.catalog-page::after,
+.contact-page::after,
+.book-page::after,
+.music-page::after {
+  content: "";
+  position: absolute;
+  top: clamp(34px, 7vw, 92px);
+  right: max(24px, calc((100vw - var(--max)) / 2));
+  z-index: 0;
+  width: clamp(170px, 22vw, 320px);
+  height: clamp(170px, 22vw, 320px);
+  background: var(--signature);
+  opacity: 0.045;
+  pointer-events: none;
+  -webkit-mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
+  mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
+}
+
+.author-page > *,
+.catalog-page > *,
+.contact-page > *,
+.book-page > *,
+.music-page > * {
+  position: relative;
+  z-index: 1;
+}
+
 .eyebrow {
   color: var(--signature);
   text-transform: uppercase;
@@ -803,5 +840,17 @@ section[id] {
 
   .footer-legal {
     justify-content: center;
+  }
+
+  .author-page::after,
+  .catalog-page::after,
+  .contact-page::after,
+  .book-page::after,
+  .music-page::after {
+    top: 26px;
+    right: -58px;
+    width: 190px;
+    height: 190px;
+    opacity: 0.032;
   }
 }
