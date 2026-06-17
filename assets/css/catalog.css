@@ -167,6 +167,29 @@ a.catalog-card .catalog-status::after {
   flex-wrap: wrap;
 }
 
+.catalog-insight {
+  max-width: 820px;
+  margin: 58px auto 0;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.catalog-insight h2 {
+  margin-bottom: 18px;
+  font-size: clamp(1.65rem, 2.6vw, 2.25rem);
+}
+
+.catalog-insight p {
+  color: var(--ink-soft);
+  font-size: 1.04rem;
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.catalog-insight em {
+  color: var(--ink);
+}
+
 @media (max-width: 1000px) {
   .catalog-grid {
     grid-template-columns: 1fr;
@@ -201,6 +224,11 @@ a.catalog-card .catalog-status::after {
   .catalog-actions .button {
     width: 100%;
     max-width: 360px;
+  }
+
+  .catalog-insight {
+    margin-top: 44px;
+    text-align: left;
   }
 }
 
