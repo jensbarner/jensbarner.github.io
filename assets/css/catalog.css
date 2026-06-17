@@ -12,6 +12,15 @@
   text-align: center;
 }
 
+.catalog-hero::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 2px;
+  margin: 0 auto 24px;
+  background: linear-gradient(90deg, var(--signature), var(--accent));
+}
+
 .catalog-hero h1 {
   margin-bottom: 22px;
 }
@@ -40,8 +49,9 @@
   gap: 28px;
   align-items: center;
   min-height: 280px;
-  padding: 26px;
-  background: rgba(255,255,255,0.94);
+  padding: 30px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(251,250,245,0.92));
   border: 1px solid rgba(47,102,95,0.16);
   border-radius: var(--radius);
   box-shadow: 0 12px 30px rgba(32,53,66,0.06);
@@ -69,6 +79,7 @@ a.catalog-card:hover {
 
 .catalog-card.is-muted {
   opacity: 0.72;
+  filter: saturate(0.88);
 }
 
 .catalog-cover {
@@ -116,6 +127,7 @@ a.catalog-card:hover {
   font-size: clamp(1.45rem, 2vw, 2rem);
   line-height: 1.2;
   margin-bottom: 14px;
+  text-wrap: balance;
 }
 
 .catalog-card p {
@@ -125,12 +137,20 @@ a.catalog-card:hover {
 
 .catalog-status {
   display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 18px;
   color: var(--signature);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+a.catalog-card .catalog-status::after {
+  content: "→";
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .catalog-actions {

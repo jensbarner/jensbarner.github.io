@@ -59,13 +59,26 @@
 ================================================== */
 
 .book-content {
+  position: relative;
   max-width: 760px;
 }
 
+.book-content::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 2px;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, var(--signature), var(--accent));
+}
+
 .book-author {
-  color: var(--ink-soft);
+  color: var(--signature);
 
   font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 
   margin-bottom: 8px;
 }
@@ -211,7 +224,7 @@
   border: 1px solid rgba(47,102,95,0.16);
   border-radius: var(--radius);
 
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 18px 42px rgba(32,53,66,0.08);
 }
 
 .book-highlight blockquote {
@@ -276,7 +289,7 @@
   border: 1px solid rgba(47,102,95,0.16);
   border-radius: var(--radius);
 
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 18px 42px rgba(32,53,66,0.08);
 }
 
 .book-highlight blockquote {

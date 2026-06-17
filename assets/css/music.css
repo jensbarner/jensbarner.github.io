@@ -88,14 +88,26 @@
 ================================================== */
 
 .music-content {
+  position: relative;
   max-width: 760px;
 }
 
+.music-content::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 2px;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, var(--signature), var(--accent));
+}
+
 .music-author {
-  color: var(--ink-soft);
+  color: var(--signature);
 
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 
   margin-bottom: 8px;
 }
@@ -113,6 +125,7 @@
   font-weight: 500;
 
   margin-bottom: 34px;
+  text-wrap: balance;
 }
 
 .music-content p {
@@ -219,6 +232,11 @@
   .music-content {
     max-width: 100%;
     text-align: center;
+  }
+
+  .music-content::before {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .music-cta {
