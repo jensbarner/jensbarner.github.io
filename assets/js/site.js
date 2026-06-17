@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileNavigation();
   initAuthorGallery();
   initCookieConsent();
+  initAnalyticsClickTracking();
   protectImages();
 });
 
@@ -199,6 +200,80 @@ function loadGoogleAnalytics() {
   window.gtag("config", measurementId, {
     anonymize_ip: true
   });
+}
+
+function initAnalyticsClickTracking() {
+  document.addEventListener("click", event => {
+    if (!(event.target instanceof Element)) return;
+
+    const link = event.target.closest("a");
+    if (!(link instanceof HTMLAnchorElement)) return;
+
+    const url = new URL(link.href, window.location.href);
+    const label = link.textContent.trim().replace(/\s+/g, " ");
+
+    if (isBookPurchaseLink(url)) {
+      trackAnalyticsEvent("book_buy_click", {
+        link_url: url.href,
+        link_text: label || "Buch kaufen"
+      });
+      return;
+    }
+
+    if (isMusicPlatformLink(url)) {
+      trackAnalyticsEvent("song_platform_click", {
+        platform: getMusicPlatform(url.hostname),
+        link_url: url.href,
+        link_text: label || "Musikplattform"
+      });
+      return;
+    }
+
+    if (url.pathname.includes("/leseprobe/")) {
+      trackAnalyticsEvent("sample_read_click", {
+        link_url: url.href,
+        link_text: label || "Leseprobe"
+      });
+      return;
+    }
+
+    if (url.pathname === "/de/kontakt/" || url.protocol === "mailto:") {
+      trackAnalyticsEvent("contact_click", {
+        link_url: url.href,
+        link_text: label || "Kontakt"
+      });
+    }
+  });
+}
+
+function trackAnalyticsEvent(eventName, parameters = {}) {
+  if (window.localStorage.getItem(analyticsConfig.storageKey) !== "accepted") return;
+
+  window.gtag("event", eventName, {
+    ...parameters,
+    page_location: window.location.href
+  });
+}
+
+function isBookPurchaseLink(url) {
+  return url.hostname.includes("amzn.to") || url.hostname.includes("amazon.");
+}
+
+function isMusicPlatformLink(url) {
+  return [
+    "open.spotify.com",
+    "music.apple.com",
+    "music.amazon.",
+    "music.youtube.com"
+  ].some(host => url.hostname.includes(host));
+}
+
+function getMusicPlatform(hostname) {
+  if (hostname.includes("spotify")) return "spotify";
+  if (hostname.includes("apple")) return "apple_music";
+  if (hostname.includes("amazon")) return "amazon_music";
+  if (hostname.includes("youtube")) return "youtube_music";
+  return "music_platform";
 }
 
 function protectImages() {

@@ -163,7 +163,7 @@
 ================================================== */
 
 .works-section {
-  padding: 36px 32px 104px;
+  padding: 36px 32px 92px;
 }
 
 .works-inner {
@@ -367,7 +367,7 @@ a.work-cover .work-action::after {
 
 .overview-links {
   max-width: var(--max);
-  margin: -28px auto 96px;
+  margin: -20px auto 84px;
   padding: 0 32px;
 
   display: grid;
@@ -476,7 +476,7 @@ a.work-cover .work-action::after {
 ================================================== */
 
 .quote-section {
-  padding: 100px 32px;
+  padding: 84px 32px;
   background: white;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -498,7 +498,7 @@ a.work-cover .work-action::after {
 
 .author-teaser {
   text-align: left;
-  padding: 100px 32px;
+  padding: 84px 32px;
 }
 
 .author-teaser > div {
@@ -527,7 +527,7 @@ a.work-cover .work-action::after {
 
 .contact-teaser {
   max-width: var(--max);
-  margin: 0 auto 100px;
+  margin: 0 auto 84px;
   padding: 60px;
 
   display: flex;

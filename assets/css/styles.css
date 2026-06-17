@@ -139,6 +139,7 @@ section[id] {
 .author-page,
 .catalog-page,
 .contact-page,
+.info-page,
 .book-page,
 .music-page {
   position: relative;
@@ -148,6 +149,7 @@ section[id] {
 .author-page::after,
 .catalog-page::after,
 .contact-page::after,
+.info-page::after,
 .book-page::after,
 .music-page::after {
   content: "";
@@ -167,6 +169,7 @@ section[id] {
 .author-page > *,
 .catalog-page > *,
 .contact-page > *,
+.info-page > *,
 .book-page > *,
 .music-page > * {
   position: relative;
@@ -185,6 +188,7 @@ section[id] {
 .author-content h1,
 .catalog-hero h1,
 .contact-hero h1,
+.info-hero h1,
 .legal-inner h1,
 .book-content h1,
 .music-content h1 {
@@ -513,7 +517,7 @@ section[id] {
     linear-gradient(180deg, rgba(255,255,255,0.64), rgba(236,228,214,0.96)),
     #ece4d6;
   border-top: 1px solid rgba(47,102,95,0.13);
-  margin-top: 100px;
+  margin-top: 84px;
 }
 
 .site-footer::before {
@@ -981,6 +985,7 @@ section[id] {
   .author-page::after,
   .catalog-page::after,
   .contact-page::after,
+  .info-page::after,
   .book-page::after,
   .music-page::after {
     top: 26px;
