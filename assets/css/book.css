@@ -1,161 +1,25 @@
 /* ==================================================
-   BOOK PAGE
+   BOOK-SPECIFIC DETAIL STYLES
+   Gemeinsame Detail-Typografie/Layout: detail.css
 ================================================== */
-
-.book-page {
-  padding: 96px 32px 104px;
-}
-
-.book-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 340px minmax(0, 1fr);
-  gap: 80px;
-
-  align-items: start;
-}
-
-/* ==================================================
-   SIDEBAR
-================================================== */
-
-.book-sidebar {
-  position: sticky;
-  top: 120px;
-}
-
-.book-sidebar picture,
-.book-cover {
-  display: block;
-  width: 100%;
-  max-width: 320px;
-}
 
 .book-sidebar picture {
   aspect-ratio: 1805 / 2594;
-  padding: 18px;
-  background:
-    linear-gradient(145deg, rgba(47,102,95,0.08), rgba(182,138,90,0.07));
-  border: 1px solid rgba(47,102,95,0.10);
-  border-radius: var(--radius);
-  margin-bottom: 30px;
 }
-
-.book-cover {
-  height: 100%;
-  object-fit: contain;
-
-  border-radius: var(--radius);
-
-  box-shadow:
-    0 25px 55px rgba(32,53,66,0.16);
-}
-
-.book-sidebar .button {
-  width: 100%;
-}
-
-/* ==================================================
-   CONTENT
-================================================== */
-
-.book-content {
-  position: relative;
-  max-width: 760px;
-}
-
-.book-content::before {
-  content: "";
-  display: block;
-  width: 72px;
-  height: 2px;
-  margin-bottom: 24px;
-  background: linear-gradient(90deg, var(--signature), var(--accent));
-}
-
-.book-author {
-  color: var(--signature);
-
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  margin-bottom: 8px;
-}
-
-.book-content h1 {
-  margin-bottom: 18px;
-}
-
-.book-subtitle {
-  color: var(--ink);
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 1.7;
-  margin-bottom: 18px;
-  text-wrap: balance;
-}
-
-.book-topic {
-  color: var(--signature);
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  line-height: 1.5;
-  margin-bottom: 34px;
-  text-transform: uppercase;
-}
-
-.book-topic span:first-child {
-  color: var(--signature);
-}
-
-.book-topic span:last-child {
-  color: var(--accent);
-}
-
-.book-content p {
-  color: var(--ink-soft);
-
-  margin-bottom: 24px;
-
-  font-size: 1.08rem;
-
-  line-height: 1.9;
-}
-
-.book-content em {
-  color: var(--ink);
-
-  font-style: italic;
-}
-
-/* ==================================================
-   BOOK BUTTONS
-================================================== */
 
 .book-buttons {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 320px;
 }
 
 .book-buttons .button {
   width: 100%;
 }
 
-/* ==================================================
-   INHALTSVERZEICHNIS
-================================================== */
-
 .book-toc {
   margin-top: 70px;
   padding-top: 50px;
-
   border-top: 1px solid var(--line);
 }
 
@@ -170,26 +34,18 @@
 
 .book-toc-list li {
   position: relative;
-
   padding-left: 20px;
   margin-bottom: 12px;
-
   color: var(--ink-soft);
 }
 
 .book-toc-list li::before {
   content: "•";
-
   position: absolute;
   left: 0;
-
   color: var(--signature);
   font-weight: 700;
 }
-
-/* ==================================================
-   BOOK DIVIDER
-================================================== */
 
 .book-divider {
   display: flex;
@@ -201,7 +57,7 @@
 .book-divider::before,
 .book-divider::after {
   content: "";
-  flex: 1;              /* statt fester Breite */
+  flex: 1;
   height: 1px;
   background: var(--line);
 }
@@ -210,92 +66,23 @@
   margin: 0 20px;
   color: var(--signature);
   font-size: 1rem;
-  white-space: nowrap;   /* verhindert Zeilenumbruch */
-}
-
-
-/* ==================================================
-   QUOTE BLOCK
-================================================== */
-
-.book-highlight {
-  margin: 50px 0;
-
-  padding: 36px;
-
-  background: rgba(255,255,255,0.9);
-
-  border: 1px solid rgba(47,102,95,0.16);
-  border-radius: var(--radius);
-
-  box-shadow: 0 18px 42px rgba(32,53,66,0.08);
-}
-
-.book-highlight blockquote {
-  font-family: var(--font-serif);
-
-  font-size: 1.6rem;
-
-  line-height: 1.5;
-
-  color: var(--ink);
-
-  text-align: center;
-}
-
-/* ==================================================
-   CTA
-================================================== */
-
-.book-cta {
-  margin-top: 60px;
-
-  padding-top: 40px;
-
-  border-top: 1px solid var(--line);
-
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-/* ==================================================
-   LESEPROBE
-================================================== */
-
-.book-content p {
-  color: var(--ink-soft);
-
-  margin-bottom: 22px;
-}
-
-.book-content strong,
-.book-content em {
-  color: var(--ink);
+  white-space: nowrap;
 }
 
 .book-highlight {
   margin: 50px 0;
-
   padding: 40px;
-
   background: rgba(255,255,255,0.92);
-
   border: 1px solid rgba(47,102,95,0.16);
   border-radius: var(--radius);
-
   box-shadow: 0 18px 42px rgba(32,53,66,0.08);
 }
 
 .book-highlight blockquote {
   font-family: var(--font-serif);
-
   font-size: clamp(1.4rem, 2vw, 2rem);
-
   line-height: 1.4;
-
   text-align: center;
-
   color: var(--ink);
 }
 
@@ -303,66 +90,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-
   margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
 }
-
-/* ==================================================
-   LESEPROBE LESBARKEIT
-================================================== */
-
-.book-content {
-  max-width: 760px;
-}
-
-.book-content > p {
-  max-width: 720px;
-}
-
-.book-content h1 {
-  margin-bottom: 10px;
-}
-
-
-
-
-/* ==================================================
-   MOBILE
-================================================== */
 
 @media (max-width: 900px) {
-
-  .book-page {
-    padding: 80px 24px;
-  }
-
-  .book-inner {
-    grid-template-columns: 1fr;
-
-    gap: 50px;
-  }
-
-  .book-sidebar {
-    position: static;
-
-    max-width: 280px;
-
-    margin: 0 auto;
-  }
-
-  .book-content {
-    max-width: 100%;
-    text-align: left;
-  }
-
-  .book-subtitle {
-    font-size: 1.15rem;
-  }
-
-  .book-content p {
-    font-size: 1rem;
-  }
-
   .book-cta {
     justify-content: center;
   }
@@ -375,23 +108,10 @@
     padding: 30px 24px;
     margin: 40px 0;
   }
-
 }
 
-
 @media (max-width: 600px) {
-
   .book-highlight blockquote {
     font-size: 1.25rem;
   }
-
-  .book-page {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .book-sidebar {
-    max-width: 260px;
-  }
-
 }

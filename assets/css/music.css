@@ -1,60 +1,12 @@
 /* ==================================================
-   MUSIC PAGE
+   MUSIC-SPECIFIC DETAIL STYLES
+   Gemeinsame Detail-Typografie/Layout: detail.css
 ================================================== */
-
-.music-page {
-  padding: 96px 32px 104px;
-}
-
-.music-page-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 340px minmax(0, 1fr);
-  gap: 80px;
-
-  align-items: start;
-}
-
-/* ==================================================
-   SIDEBAR
-================================================== */
-
-.music-sidebar {
-  position: sticky;
-  top: 120px;
-}
-
-.music-sidebar picture,
-.music-cover {
-  display: block;
-  width: 100%;
-  max-width: 320px;
-}
-
-.music-sidebar picture {
-  padding: 18px;
-  background:
-    linear-gradient(145deg, rgba(47,102,95,0.08), rgba(182,138,90,0.07));
-  border: 1px solid rgba(47,102,95,0.10);
-  border-radius: var(--radius);
-  margin-bottom: 30px;
-}
-
-.music-cover {
-  height: auto;
-  border-radius: var(--radius);
-
-  box-shadow: 0 24px 50px rgba(32,53,66,0.16);
-}
 
 .music-platforms {
   display: flex;
   flex-direction: column;
   gap: 12px;
-
-  max-width: 320px;
 }
 
 .music-platforms a {
@@ -63,218 +15,57 @@
   align-items: center;
 
   min-height: 48px;
-
   padding: 12px 18px;
 
   background: rgba(255,255,255,0.92);
-
   border: 1px solid rgba(47,102,95,0.16);
   border-radius: 999px;
 
   text-decoration: none;
-
   color: var(--ink);
-
   font-weight: 700;
   font-size: 0.95rem;
 
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 
 .music-platforms a:hover {
   background: var(--signature-soft);
-
   color: var(--signature-dark);
-
   transform: translateY(-2px);
-
   box-shadow: var(--shadow-soft);
-}
-
-/* ==================================================
-   CONTENT
-================================================== */
-
-.music-content {
-  position: relative;
-  max-width: 760px;
-}
-
-.music-content::before {
-  content: "";
-  display: block;
-  width: 72px;
-  height: 2px;
-  margin-bottom: 24px;
-  background: linear-gradient(90deg, var(--signature), var(--accent));
-}
-
-.music-author {
-  color: var(--signature);
-
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  margin-bottom: 8px;
-}
-
-.music-content h1 {
-  margin-bottom: 18px;
-}
-
-.music-lead {
-  font-size: 1.25rem;
-  line-height: 1.7;
-
-  color: var(--ink);
-
-  font-weight: 500;
-
-  margin-bottom: 34px;
-  text-wrap: balance;
-}
-
-.music-content p {
-  color: var(--ink-soft);
-
-  margin-bottom: 24px;
-}
-
-.music-content strong,
-.music-content em {
-  color: var(--ink);
-}
-
-.music-content strong {
-  font-weight: 700;
 }
 
 .music-cta {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-
   margin-top: 40px;
 }
-
-/* ==================================================
-   MUSIC VIDEO
-================================================== */
-.music-video {
-  margin-top: 40px;
-}
-
-.music-video iframe {
-  width: 100%;
-  max-width: 480px;
-  aspect-ratio: 16 / 9;
-
-  border: 0;
-  border-radius: var(--radius);
-
-  box-shadow: var(--shadow-soft);
-}
-
-/* ==================================================
-   QUOTE
-================================================== */
 
 .music-page + .quote-section {
   margin-top: 30px;
 }
 
-/* ==================================================
-   MUSIC PAGE
-================================================== */
-
-.music-page ~ .author-teaser {
-  padding-top: 90px;
-}
-
-/* ==================================================
-   MOBILE TABLET
-================================================== */
-
-@media (max-width: 1000px) {
-
-  .music-page-inner {
-    gap: 50px;
-  }
-
-}
-
-/* ==================================================
-   MOBILE
-================================================== */
-
 @media (max-width: 900px) {
-
-  .music-page {
-    padding: 60px 24px 80px;
-  }
-
-  .music-page-inner {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
   .music-sidebar {
-    position: static;
-
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .music-cover {
-    max-width: 280px;
-  }
-
   .music-platforms {
     width: 100%;
-    max-width: 320px;
-  }
-
-  .music-content {
-    max-width: 100%;
-    text-align: left;
   }
 
   .music-cta {
     justify-content: center;
   }
-
-  .music-video iframe {
-    max-width: 100%;
-  }
-
 }
 
-/* ==================================================
-   SMALL MOBILE
-================================================== */
-
 @media (max-width: 600px) {
-
-  .music-page {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .music-lead {
-    font-size: 1.1rem;
-  }
-
   .music-platforms a {
     min-height: 44px;
     font-size: 0.9rem;
   }
-
-  .music-sidebar picture,
-  .music-cover {
-    max-width: 260px;
-  }
-
 }

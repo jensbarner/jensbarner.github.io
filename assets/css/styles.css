@@ -459,12 +459,31 @@ section[id] {
 ================================================== */
 
 .site-footer {
-  background: #ece4d6;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(47,102,95,0.08), transparent 34%),
+    #ece4d6;
   border-top: 1px solid var(--line);
   margin-top: 100px;
 }
 
+.site-footer::before {
+  content: "";
+  position: absolute;
+  right: 7vw;
+  top: 32px;
+  width: 170px;
+  height: 170px;
+  background: var(--signature);
+  opacity: 0.055;
+  pointer-events: none;
+  -webkit-mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
+  mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
+}
+
 .site-footer-inner {
+  position: relative;
   max-width: 900px;
   margin: 0 auto;
 
@@ -484,7 +503,7 @@ section[id] {
   font-family: var(--font-serif);
   font-size: 0.95rem;
   margin-bottom: 16px;
-  color: var(--ink);
+  color: var(--signature-dark);
 }
 
 .footer-column a {
@@ -499,6 +518,7 @@ section[id] {
 }
 
 .site-footer-bottom {
+  position: relative;
   max-width: 900px;
   margin: 0 auto;
 

@@ -17,7 +17,7 @@
   position: relative;
   max-width: var(--max);
   margin: 0 auto;
-  padding: 78px 32px 58px;
+  padding: 82px 32px 70px;
 
   display: grid;
   grid-template-columns: minmax(0, 1fr) 420px;
@@ -69,7 +69,7 @@
   max-width: 620px;
   font-size: 1.12rem;
   line-height: 1.8;
-  margin-bottom: 28px;
+  margin-bottom: 34px;
   color: var(--ink-soft);
 }
 
@@ -163,7 +163,7 @@
 ================================================== */
 
 .works-section {
-  padding: 24px 32px 96px;
+  padding: 36px 32px 104px;
 }
 
 .works-inner {
@@ -298,13 +298,15 @@ a.work-cover:hover img {
 }
 
 .work-text {
-  min-height: 132px;
-  display: flex;
-  flex-direction: column;
+  min-height: 142px;
+  display: grid;
+  grid-template-rows: auto minmax(3.1em, auto) 1.45em auto;
+  align-content: start;
 }
 
 .work-text .coming-soon {
   min-height: 1.2em;
+  line-height: 1.2;
 }
 
 .work-action {
@@ -312,6 +314,7 @@ a.work-cover:hover img {
   color: var(--signature);
   font-size: 0.82rem;
   font-weight: 700;
+  align-self: end;
 }
 
 a.work-cover .work-action::after {
@@ -326,7 +329,7 @@ a.work-cover .work-action::after {
 .themes {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 10px 32px 44px;
+  padding: 0 32px 54px;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -364,7 +367,7 @@ a.work-cover .work-action::after {
 
 .overview-links {
   max-width: var(--max);
-  margin: -42px auto 92px;
+  margin: -28px auto 96px;
   padding: 0 32px;
 
   display: grid;
@@ -643,7 +646,7 @@ a.work-cover .work-action::after {
 
 @media (max-width: 700px) {
   .compact-hero {
-    padding: 58px 24px 64px;
+    padding: 58px 24px 72px;
     gap: 36px;
   }
 
@@ -700,6 +703,10 @@ a.work-cover .work-action::after {
   .work-cover h3 {
     min-height: 0;
     font-size: 1.18rem;
+  }
+
+  .work-text {
+    min-height: 122px;
   }
 
   .overview-links {
