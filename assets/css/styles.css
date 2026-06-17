@@ -177,16 +177,16 @@ section[id] {
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
-  color: var(--ink);
+  color: var(--signature-dark);
   white-space: nowrap;
 }
 
 .logo::before {
   content: "";
-  width: 24px;
-  height: 24px;
-  flex: 0 0 24px;
-  background: var(--signature);
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  background: var(--signature-dark);
   -webkit-mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
   mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
 }
