@@ -44,6 +44,19 @@
   margin-bottom: 22px;
 }
 
+.author-content > p:not(.eyebrow):not(.author-lead) {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.author-content .eyebrow,
+.author-content h1,
+.author-lead {
+  text-align: center;
+}
+
 .author-actions {
   display: flex;
   justify-content: center;
