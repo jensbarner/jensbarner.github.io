@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const analyticsConfig = {
   measurementId: "G-R13Q2JEHFQ",
-  storageKey: "job_cookie_consent_v1"
+  storageKey: "job_cookie_consent_v1",
+  sessionRejectedKey: "job_cookie_rejected_session_v1"
 };
 
 function initMobileNavigation() {
@@ -84,14 +85,20 @@ function initAuthorGallery() {
 }
 
 function initCookieConsent() {
-  const storedConsent = window.localStorage.getItem(analyticsConfig.storageKey);
+  let storedConsent = window.localStorage.getItem(analyticsConfig.storageKey);
+  const rejectedThisSession = window.sessionStorage.getItem(analyticsConfig.sessionRejectedKey) === "true";
 
   initGoogleConsent();
 
   if (storedConsent === "accepted") {
     grantAnalyticsConsent();
     loadGoogleAnalytics();
-  } else if (storedConsent !== "rejected" && !isPrivacyInformationPage()) {
+  } else {
+    window.localStorage.removeItem(analyticsConfig.storageKey);
+    storedConsent = null;
+  }
+
+  if (!storedConsent && !rejectedThisSession && !isPrivacyInformationPage()) {
     showCookieDialog();
   }
 
@@ -155,13 +162,15 @@ function showCookieDialog(isSettings = false) {
 
   dialog.querySelector("[data-cookie-accept]").addEventListener("click", () => {
     window.localStorage.setItem(analyticsConfig.storageKey, "accepted");
+    window.sessionStorage.removeItem(analyticsConfig.sessionRejectedKey);
     grantAnalyticsConsent();
     loadGoogleAnalytics();
     backdrop.remove();
   });
 
   dialog.querySelector("[data-cookie-reject]").addEventListener("click", () => {
-    window.localStorage.setItem(analyticsConfig.storageKey, "rejected");
+    window.localStorage.removeItem(analyticsConfig.storageKey);
+    window.sessionStorage.setItem(analyticsConfig.sessionRejectedKey, "true");
     denyAnalyticsConsent();
     backdrop.remove();
   });
