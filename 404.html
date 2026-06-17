@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -17,31 +19,13 @@
 
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/legal.css">
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs information">
+
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="site-header-inner">
-
-    <a class="logo" href="/">
-      Jens Oliver Barner
-    </a>
-
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-      <span>Menü</span>
-    </button>
-
-    <nav class="navigation" id="primary-navigation" aria-label="Hauptnavigation">
-      <a href="/de/buecher/">Bücher</a>
-      <a href="/de/audiobooks/">Hörbücher</a>
-      <a href="/de/musik/">Musik</a>
-      <a href="/de/ueber-mich/">Über mich</a>
-      <a href="/de/kontakt/">Kontakt</a>
-    </nav>
-
-  </div>
-</header>
+{% include header.html %}
 
 <main>
   <section class="legal-page">
@@ -62,37 +46,7 @@
   </section>
 </main>
 
-<footer class="site-footer">
-
-  <div class="site-footer-inner compact-footer">
-
-    <div class="footer-column">
-      <h3>Entdecken</h3>
-      <a href="/#werke">Veröffentlichungen</a>
-      <a href="/de/buecher/">Bücher</a>
-      <a href="/de/audiobooks/">Hörbücher</a>
-      <a href="/de/musik/">Musik</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Navigation</h3>
-      <a href="/de/ueber-mich/">Über mich</a>
-      <a href="/de/kontakt/">Kontakt</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Rechtliches</h3>
-      <a href="/de/impressum/">Impressum</a>
-      <a href="/de/datenschutz/">Datenschutz</a>
-    </div>
-
-  </div>
-
-  <div class="site-footer-bottom compact-footer-bottom">
-    <p>© 2026 Jens Oliver Barner</p>
-  </div>
-
-</footer>
+{% include footer.html %}
 
 <script src="/assets/js/site.js" defer></script>
 

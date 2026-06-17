@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://jensbarner.com/sitemap.xml
+
+LLMS: https://jensbarner.com/llms.txt
