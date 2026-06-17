@@ -57,11 +57,12 @@
 }
 
 .hero-text h1 {  
-  font-size: clamp(2.7rem, 5.2vw, 5rem);
+  font-size: clamp(2.55rem, 4.5vw, 4.15rem);
   line-height: 1.08;
   letter-spacing: 0;
-  max-width: 640px;
+  max-width: none;
   margin-bottom: 22px;
+  white-space: nowrap;
 }
 
 .hero-subline {
@@ -690,6 +691,10 @@ a.work-cover .work-action::after {
   .hero-cover img {
     max-width: 300px;
     border-radius: var(--radius);
+  }
+
+  .hero-text h1 {
+    white-space: normal;
   }
 
   .hero-proof {
