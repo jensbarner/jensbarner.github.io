@@ -1,6 +1,6 @@
 /* ==================================================
    LEGAL PAGES
-   Impressum / Datenschutz / Kontakt
+   Impressum / Datenschutz
 ================================================== */
 
 .legal-page {
@@ -62,67 +62,6 @@
 .legal-updated {
   margin-top: -24px;
   margin-bottom: 36px;
-
-  color: var(--ink-soft);
-
-  font-size: 0.95rem;
-}
-
-/* ==================================================
-   CONTACT PAGE
-================================================== */
-
-.contact-email {
-  margin: 30px 0 40px;
-}
-
-.contact-email a {
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-
-.contact-social {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 14px;
-
-  margin-top: 20px;
-}
-
-.contact-social a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px 18px;
-
-  background: white;
-
-  border: 1px solid var(--line);
-  border-radius: 999px;
-
-  text-decoration: none;
-
-  color: var(--ink);
-
-  transition: 0.2s ease;
-}
-
-.contact-social a:hover {
-  color: var(--accent-dark);
-
-  border-color: rgba(143,101,64,0.25);
-
-  transform: translateY(-2px);
-}
-
-.contact-note {
-  margin-top: 40px;
-
-  padding-top: 30px;
-
-  border-top: 1px solid var(--line);
 
   color: var(--ink-soft);
 
