@@ -3,7 +3,7 @@
 ================================================== */
 
 .music-page {
-  padding: 80px 32px 100px;
+  padding: 96px 32px 104px;
 }
 
 .music-page-inner {
@@ -239,12 +239,7 @@
 
   .music-content {
     max-width: 100%;
-    text-align: center;
-  }
-
-  .music-content::before {
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
   }
 
   .music-cta {
