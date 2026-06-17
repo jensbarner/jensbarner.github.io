@@ -114,15 +114,20 @@ function initGoogleConsent() {
 }
 
 function showCookieDialog(isSettings = false) {
-  const existingDialog = document.querySelector(".cookie-consent");
+  const existingDialog = document.querySelector(".cookie-consent-backdrop");
   if (existingDialog) existingDialog.remove();
+
+  const backdrop = document.createElement("div");
+  backdrop.className = "cookie-consent-backdrop";
 
   const dialog = document.createElement("section");
   dialog.className = "cookie-consent";
   dialog.setAttribute("role", "dialog");
-  dialog.setAttribute("aria-modal", "false");
+  dialog.setAttribute("aria-modal", "true");
   dialog.setAttribute("aria-label", "Cookie-Einstellungen");
   dialog.innerHTML = `
+    <span class="cookie-consent-mark" aria-hidden="true"></span>
+    <p class="cookie-consent-eyebrow">Datenschutz</p>
     <h2>Cookies & Analyse</h2>
     <p>
       Diese Website kann Google Analytics verwenden, um anonymisierte
@@ -140,23 +145,24 @@ function showCookieDialog(isSettings = false) {
     </div>
   `;
 
-  document.body.append(dialog);
+  backdrop.append(dialog);
+  document.body.append(backdrop);
 
   dialog.querySelector("[data-cookie-accept]").addEventListener("click", () => {
     window.localStorage.setItem(analyticsConfig.storageKey, "accepted");
     grantAnalyticsConsent();
     loadGoogleAnalytics();
-    dialog.remove();
+    backdrop.remove();
   });
 
   dialog.querySelector("[data-cookie-reject]").addEventListener("click", () => {
     window.localStorage.setItem(analyticsConfig.storageKey, "rejected");
     denyAnalyticsConsent();
-    dialog.remove();
+    backdrop.remove();
   });
 
   if (isSettings) {
-    dialog.querySelector("[data-cookie-reject]").focus();
+    dialog.querySelector("[data-cookie-accept]").focus();
   }
 }
 

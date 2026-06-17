@@ -684,34 +684,84 @@ section[id] {
    COOKIE CONSENT
 ================================================== */
 
-.cookie-consent {
+.cookie-consent-backdrop {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
   z-index: 1200;
-  width: min(420px, calc(100vw - 40px));
-  padding: 22px;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(47,102,95,0.16), transparent 32%),
+    rgba(32,53,66,0.34);
+  backdrop-filter: blur(5px);
+}
+
+.cookie-consent {
+  position: relative;
+  overflow: hidden;
+  width: min(560px, 100%);
+  padding: 34px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.98), rgba(251,250,245,0.96));
   border: 1px solid rgba(47,102,95,0.16);
   border-radius: var(--radius);
-  box-shadow: 0 24px 56px rgba(32,53,66,0.18);
+  box-shadow: 0 30px 80px rgba(32,53,66,0.28);
 }
 
-.cookie-consent[hidden] {
+.cookie-consent-backdrop[hidden] {
   display: none;
 }
 
+.cookie-consent::before {
+  content: "";
+  position: absolute;
+  right: -44px;
+  top: -52px;
+  width: 190px;
+  height: 190px;
+  background: var(--signature);
+  opacity: 0.045;
+  pointer-events: none;
+  -webkit-mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
+  mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
+}
+
+.cookie-consent > * {
+  position: relative;
+  z-index: 1;
+}
+
+.cookie-consent-mark {
+  display: block;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 16px;
+  background: var(--signature-dark);
+  -webkit-mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
+  mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
+}
+
+.cookie-consent-eyebrow {
+  margin-bottom: 8px;
+  color: var(--signature);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 .cookie-consent h2 {
-  margin-bottom: 10px;
-  font-size: 1.25rem;
-  line-height: 1.25;
+  margin-bottom: 12px;
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  line-height: 1.16;
 }
 
 .cookie-consent p {
   color: var(--ink-soft);
-  font-size: 0.94rem;
-  line-height: 1.65;
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 .cookie-consent a {
@@ -723,14 +773,13 @@ section[id] {
 .cookie-consent-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
+  gap: 12px;
+  margin-top: 24px;
 }
 
 .cookie-consent-actions .button {
-  min-height: 42px;
-  padding: 12px 18px;
-  font-size: 0.9rem;
+  min-height: 46px;
+  padding: 14px 22px;
 }
 
 /* ==================================================
@@ -916,10 +965,13 @@ section[id] {
     justify-content: center;
   }
 
+  .cookie-consent-backdrop {
+    align-items: end;
+    padding: 16px;
+  }
+
   .cookie-consent {
-    right: 16px;
-    bottom: 16px;
-    width: calc(100vw - 32px);
+    padding: 28px 24px;
   }
 
   .cookie-consent-actions .button {
