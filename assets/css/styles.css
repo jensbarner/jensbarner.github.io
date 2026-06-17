@@ -149,14 +149,10 @@ section[id] {
    HEADER
 ================================================== */
 
-.header-include {
+.site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-}
-
-.site-header {
-  position: relative;
   background: rgba(251,250,245,0.88);
   border-bottom: 1px solid rgba(32,53,66,0.10);
   backdrop-filter: blur(12px);
@@ -272,6 +268,7 @@ section[id] {
 
 .nav-dropdown-menu {
   position: absolute;
+  z-index: 1001;
 
   top: calc(100% + 14px);
   left: 50%;
