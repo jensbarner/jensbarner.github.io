@@ -30,11 +30,11 @@
 .author-lead {
   margin: 22px auto 34px;
 
-  max-width: 720px;
+  max-width: 680px;
 
   color: var(--ink);
-  font-size: 1.25rem;
-  line-height: 1.7;
+  font-size: 1.16rem;
+  line-height: 1.75;
   font-weight: 500;
 }
 
@@ -52,9 +52,12 @@
 }
 
 .author-content .eyebrow,
-.author-content h1,
-.author-lead {
+.author-content h1 {
   text-align: center;
+}
+
+.author-lead {
+  text-align: left;
 }
 
 .author-actions {
