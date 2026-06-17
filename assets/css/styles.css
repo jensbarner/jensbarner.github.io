@@ -182,6 +182,16 @@ section[id] {
   margin-bottom: 14px;
 }
 
+.author-content h1,
+.catalog-hero h1,
+.contact-hero h1,
+.legal-inner h1,
+.book-content h1,
+.music-content h1 {
+  font-size: clamp(2.25rem, 3.6vw, 3.65rem);
+  line-height: 1.08;
+}
+
 /* ==================================================
    HEADER
 ================================================== */
@@ -655,8 +665,72 @@ section[id] {
   text-decoration: none;
 }
 
-.footer-legal a:hover {
+.footer-cookie-settings {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.footer-legal a:hover,
+.footer-cookie-settings:hover {
   color: var(--signature);
+}
+
+/* ==================================================
+   COOKIE CONSENT
+================================================== */
+
+.cookie-consent {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1200;
+  width: min(420px, calc(100vw - 40px));
+  padding: 22px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(251,250,245,0.96));
+  border: 1px solid rgba(47,102,95,0.16);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 56px rgba(32,53,66,0.18);
+}
+
+.cookie-consent[hidden] {
+  display: none;
+}
+
+.cookie-consent h2 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.cookie-consent p {
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.cookie-consent a {
+  color: var(--signature);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cookie-consent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.cookie-consent-actions .button {
+  min-height: 42px;
+  padding: 12px 18px;
+  font-size: 0.9rem;
 }
 
 /* ==================================================
@@ -840,6 +914,16 @@ section[id] {
 
   .footer-legal {
     justify-content: center;
+  }
+
+  .cookie-consent {
+    right: 16px;
+    bottom: 16px;
+    width: calc(100vw - 32px);
+  }
+
+  .cookie-consent-actions .button {
+    width: 100%;
   }
 
   .author-page::after,
