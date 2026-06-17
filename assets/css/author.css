@@ -127,7 +127,7 @@
 }
 
 .gallery-button:hover {
-  color: var(--accent-dark);
+  color: var(--signature);
 
   transform: translateY(-50%) scale(1.04);
 }
@@ -165,7 +165,7 @@
 .gallery-dot.is-active {
   width: 24px;
 
-  background: var(--accent-dark);
+  background: var(--signature);
 }
 
 /* ==================================================
@@ -188,18 +188,19 @@
 .author-values article {
   padding: 34px;
 
-  background: rgba(255,255,255,0.82);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(251,250,245,0.88));
 
-  border: 1px solid var(--line);
+  border: 1px solid rgba(47,102,95,0.14);
   border-radius: var(--radius);
 
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
 }
 
 .author-values span {
   display: block;
 
-  color: var(--accent-dark);
+  color: var(--signature);
 
   font-weight: 700;
 
@@ -234,10 +235,10 @@
 
   padding: 18px 22px;
 
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.9);
 
-  border: 1px solid var(--line);
-  border-radius: 18px;
+  border: 1px solid rgba(47,102,95,0.14);
+  border-radius: var(--radius);
 
   box-shadow: var(--shadow-soft);
 }

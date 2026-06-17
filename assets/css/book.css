@@ -42,10 +42,10 @@
   height: 100%;
   object-fit: contain;
 
-  border-radius: 18px;
+  border-radius: 12px;
 
   box-shadow:
-    0 25px 55px rgba(0,0,0,0.18);
+    0 25px 55px rgba(32,53,66,0.16);
 
   margin-bottom: 28px;
 }
@@ -94,7 +94,7 @@
 }
 
 .book-topic span:first-child {
-  color: #4a79ff;
+  color: var(--signature);
 }
 
 .book-topic span:last-child {
@@ -166,7 +166,7 @@
   position: absolute;
   left: 0;
 
-  color: var(--accent-dark);
+  color: var(--signature);
   font-weight: 700;
 }
 
@@ -191,7 +191,7 @@
 
 .book-divider span {
   margin: 0 20px;
-  color: var(--accent-dark);
+  color: var(--signature);
   font-size: 1rem;
   white-space: nowrap;   /* verhindert Zeilenumbruch */
 }
@@ -206,9 +206,9 @@
 
   padding: 36px;
 
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.9);
 
-  border: 1px solid var(--line);
+  border: 1px solid rgba(47,102,95,0.16);
   border-radius: var(--radius);
 
   box-shadow: var(--shadow-soft);
@@ -271,9 +271,9 @@
 
   padding: 40px;
 
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.92);
 
-  border: 1px solid var(--line);
+  border: 1px solid rgba(47,102,95,0.16);
   border-radius: var(--radius);
 
   box-shadow: var(--shadow-soft);

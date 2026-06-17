@@ -33,27 +33,38 @@
 }
 
 .catalog-card {
+  position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 180px minmax(0, 1fr);
   gap: 28px;
   align-items: center;
   min-height: 280px;
   padding: 26px;
-  background: rgba(255,255,255,0.86);
-  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.94);
+  border: 1px solid rgba(47,102,95,0.16);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 12px 30px rgba(32,53,66,0.06);
   color: inherit;
   text-decoration: none;
 }
 
 a.catalog-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+a.catalog-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--signature), var(--accent));
 }
 
 a.catalog-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-medium);
+  border-color: rgba(47,102,95,0.34);
+  box-shadow: 0 24px 48px rgba(32,53,66,0.11);
 }
 
 .catalog-card.is-muted {
@@ -81,7 +92,7 @@ a.catalog-card:hover {
   height: 100%;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+  box-shadow: 0 16px 32px rgba(32,53,66,0.14);
 }
 
 .catalog-cover.is-square picture {
@@ -93,7 +104,7 @@ a.catalog-card:hover {
 }
 
 .catalog-meta {
-  color: var(--accent-dark);
+  color: var(--signature);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -115,7 +126,7 @@ a.catalog-card:hover {
 .catalog-status {
   display: inline-flex;
   margin-top: 18px;
-  color: var(--accent-dark);
+  color: var(--signature);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;

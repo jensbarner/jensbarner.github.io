@@ -3,27 +3,30 @@
 ================================================== */
 
 :root {
-  --paper: #faf8f2;
-  --paper-soft: #f2ece0;
+  --paper: #fbfaf5;
+  --paper-soft: #eee7da;
 
   --white: #ffffff;
 
-  --accent: #b98958;
-  --accent-dark: #8f6540;
+  --accent: #b68a5a;
+  --accent-dark: #8b623c;
+  --signature: #2f665f;
+  --signature-dark: #214941;
+  --signature-soft: #dbe8e2;
 
-  --ink: #243746;
-  --ink-soft: #647684;
+  --ink: #203542;
+  --ink-soft: #61727c;
 
-  --line: rgba(36,55,70,0.10);
+  --line: rgba(32,53,66,0.12);
 
   --max: 1200px;
-  --radius: 24px;
+  --radius: 8px;
 
   --shadow-soft:
-    0 12px 35px rgba(0,0,0,0.05);
+    0 10px 28px rgba(32,53,66,0.07);
 
   --shadow-medium:
-    0 24px 60px rgba(0,0,0,0.10);
+    0 24px 56px rgba(32,53,66,0.13);
 
   --font-serif:
     "Libre Baskerville",
@@ -62,6 +65,7 @@ body {
   color: var(--ink);
   font-family: var(--font-sans);
   line-height: 1.75;
+  text-rendering: optimizeLegibility;
 }
 
 /* ==================================================
@@ -72,8 +76,8 @@ main {
   background:
     linear-gradient(
       to bottom,
-      #f2ece0 0,
-      #faf8f2 520px
+      #eee7da 0,
+      #fbfaf5 520px
     );
 }
 
@@ -91,13 +95,13 @@ h3 {
 h1 {
   font-size: clamp(2.45rem, 4.6vw, 4.55rem);
   line-height: 1.04;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 h2 {
   font-size: clamp(2rem, 3.5vw, 3rem);
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   margin-bottom: 20px;
 }
 
@@ -121,7 +125,7 @@ section[id] {
 }
 
 .eyebrow {
-  color: var(--accent-dark);
+  color: var(--signature);
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-size: 0.74rem;
@@ -141,8 +145,8 @@ section[id] {
 
 .site-header {
   position: relative;
-  background: rgba(233, 222, 203, 0.94);
-  border-bottom: 1px solid rgba(36,55,70,0.08);
+  background: rgba(238, 231, 218, 0.94);
+  border-bottom: 1px solid rgba(32,53,66,0.10);
   backdrop-filter: blur(12px);
 }
 
@@ -157,12 +161,25 @@ section[id] {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
   color: var(--ink);
   white-space: nowrap;
+}
+
+.logo::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  border: 2px solid var(--signature);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 3px var(--paper-soft);
+  transform: rotate(45deg);
 }
 
 .nav-toggle {
@@ -208,7 +225,7 @@ section[id] {
   width: 0;
   height: 2px;
 
-  background: var(--accent-dark);
+  background: var(--signature);
 
   transform: translateX(-50%);
   transition: width 0.25s ease;
@@ -248,10 +265,10 @@ section[id] {
   min-width: 240px;
   padding: 6px;
 
-  background: white;
+  background: rgba(255,255,255,0.98);
 
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 8px;
 
   box-shadow: var(--shadow-soft);
 
@@ -291,7 +308,8 @@ section[id] {
 }
 
 .nav-dropdown-menu a:hover {
-  background: var(--paper-soft);
+  background: var(--signature-soft);
+  color: var(--signature-dark);
 }
 
 .nav-disabled {
@@ -337,7 +355,7 @@ section[id] {
   font-weight: 700;
   line-height: 1;
 
-  transition: 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button:hover {
@@ -345,14 +363,24 @@ section[id] {
 }
 
 .primary {
-  background: var(--accent-dark);
+  background: var(--signature);
   color: white;
+  box-shadow: 0 10px 24px rgba(47,102,95,0.18);
+}
+
+.primary:hover {
+  background: var(--signature-dark);
 }
 
 .secondary {
-  background: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.82);
   color: var(--ink);
   border: 1px solid var(--line);
+}
+
+.secondary:hover {
+  background: white;
+  border-color: rgba(47,102,95,0.28);
 }
 
 /* ==================================================
@@ -362,7 +390,9 @@ section[id] {
 .quote-section {
   padding: 90px 32px;
 
-  background: var(--white);
+  background:
+    linear-gradient(90deg, rgba(47,102,95,0.08), transparent 22%, transparent 78%, rgba(182,138,90,0.10)),
+    var(--white);
 
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -377,7 +407,7 @@ section[id] {
   font-family: var(--font-serif);
   font-size: clamp(1.8rem, 3vw, 3.2rem);
   line-height: 1.25;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   color: var(--ink);
 }
 
@@ -410,7 +440,7 @@ section[id] {
 ================================================== */
 
 .site-footer {
-  background: #f4eee3;
+  background: #ece4d6;
   border-top: 1px solid var(--line);
   margin-top: 100px;
 }
@@ -446,7 +476,7 @@ section[id] {
 }
 
 .footer-column a:hover {
-  color: var(--accent-dark);
+  color: var(--signature);
 }
 
 .site-footer-bottom {

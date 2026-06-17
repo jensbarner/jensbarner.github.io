@@ -32,7 +32,7 @@
 .hero-text h1 {  
   font-size: clamp(2rem, 3.5vw, 3.3rem);
   line-height: 1.08;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   max-width: 540px;
   margin-bottom: 22px;
 }
@@ -65,8 +65,8 @@
 .hero-cover img {
   height: auto;
 
-  border-radius: 28px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  box-shadow: 0 18px 42px rgba(32,53,66,0.14);
 }
 
 
@@ -119,7 +119,7 @@
 ================================================== */
 
 .works-section {
-  padding: 20px 32px 100px;
+  padding: 20px 32px 88px;
 }
 
 .works-inner {
@@ -206,7 +206,7 @@
   border-radius: 0;
 
   /* Grundschatten sehr dezent */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 20px rgba(32,53,66,0.09);
 
   transition:
     transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -224,8 +224,8 @@
 .work-cover:hover img {
   transform: translateY(-4px) scale(1.04);
   box-shadow:
-    0 18px 28px rgba(0,0,0,0.12),
-    0 6px 10px rgba(0,0,0,0.08);
+    0 20px 32px rgba(32,53,66,0.16),
+    0 7px 12px rgba(32,53,66,0.10);
 }
 
 /* Coming‑Soon bewusst zurückhaltender */
@@ -239,7 +239,7 @@
 .work-type {
   display: block;
   margin-top: 14px;
-  color: var(--accent-dark);
+  color: var(--signature);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -250,7 +250,7 @@
 .coming-soon {
   display: block;
   margin-top: 4px;
-  color: var(--accent-dark);
+  color: var(--signature);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -276,7 +276,7 @@
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: var(--accent-dark);
+  color: var(--signature);
   opacity: 0.75;
   min-height: 1.2em;
   display: block;
@@ -313,7 +313,7 @@
 }
 
 .works-gallery-button:hover {
-  color: var(--accent-dark);
+  color: var(--signature);
   transform: translateY(-50%) scale(1.04);
 }
 
@@ -342,15 +342,16 @@
 
 .themes article {
   padding: 34px;
-  background: rgba(255,255,255,0.9);
-  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(251,250,245,0.88));
+  border: 1px solid rgba(47,102,95,0.14);
   border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  box-shadow: none;
 }
 
 .themes span {
   display: block;
-  color: var(--accent-dark);
+  color: var(--signature);
   font-weight: 700;
   margin-bottom: 14px;
 }
@@ -375,6 +376,8 @@
 }
 
 .overview-link {
+  position: relative;
+  overflow: hidden;
   min-height: 188px;
   padding: 28px;
 
@@ -382,32 +385,41 @@
   flex-direction: column;
   justify-content: flex-start;
 
-  background: rgba(255,255,255,0.86);
-  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.94);
+  border: 1px solid rgba(47,102,95,0.18);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 12px 30px rgba(32,53,66,0.06);
 
   color: inherit;
   text-decoration: none;
   cursor: pointer;
 
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.overview-link::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--signature), var(--accent));
 }
 
 .overview-link:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-medium);
+  border-color: rgba(47,102,95,0.36);
+  box-shadow: 0 24px 48px rgba(32,53,66,0.11);
 }
 
 .overview-link:focus-visible {
-  outline: 3px solid rgba(143,101,64,0.38);
+  outline: 3px solid rgba(47,102,95,0.32);
   outline-offset: 4px;
 }
 
 .overview-link span {
   margin-bottom: 12px;
 
-  color: var(--accent-dark);
+  color: var(--signature);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -438,7 +450,7 @@
 
   padding: 10px 14px;
 
-  background: var(--accent-dark);
+  background: var(--signature);
   border-radius: 999px;
 
   color: white;
@@ -455,7 +467,7 @@
 }
 
 .overview-link:hover em {
-  background: var(--ink);
+  background: var(--signature-dark);
 }
 
 
@@ -523,7 +535,8 @@
   align-items: center;
   gap: 40px;
 
-  background: var(--ink);
+  background:
+    linear-gradient(135deg, var(--signature-dark), var(--ink));
   border-radius: calc(var(--radius) + 6px);
   color: white;
 }

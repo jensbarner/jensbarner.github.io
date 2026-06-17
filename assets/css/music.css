@@ -36,7 +36,7 @@
 .music-cover {
   height: auto;
 
-  box-shadow: var(--shadow-medium);
+  box-shadow: 0 24px 50px rgba(32,53,66,0.16);
 
   margin-bottom: 30px;
 }
@@ -58,9 +58,9 @@
 
   padding: 12px 18px;
 
-  background: white;
+  background: rgba(255,255,255,0.92);
 
-  border: 1px solid var(--line);
+  border: 1px solid rgba(47,102,95,0.16);
   border-radius: 999px;
 
   text-decoration: none;
@@ -74,9 +74,9 @@
 }
 
 .music-platforms a:hover {
-  background: var(--paper-soft);
+  background: var(--signature-soft);
 
-  color: var(--accent-dark);
+  color: var(--signature-dark);
 
   transform: translateY(-2px);
 
@@ -151,7 +151,7 @@
   aspect-ratio: 16 / 9;
 
   border: 0;
-  border-radius: 18px;
+  border-radius: var(--radius);
 
   box-shadow: var(--shadow-soft);
 }
