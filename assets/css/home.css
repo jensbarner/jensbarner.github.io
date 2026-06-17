@@ -290,6 +290,16 @@ a.work-cover:hover img {
   opacity: 0.82;
 }
 
+.work-proof {
+  display: block;
+  margin-top: 6px;
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+}
+
 .work-cover h3 {
   margin: 0;
   min-height: 3.1em;
