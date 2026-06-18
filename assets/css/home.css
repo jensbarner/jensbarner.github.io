@@ -270,6 +270,10 @@ a.work-cover:hover img {
   opacity: 0.78;
 }
 
+.work-cover-preview img {
+  opacity: 1;
+}
+
 .work-preview-wrap {
   align-items: center;
 }
