@@ -27,21 +27,6 @@
   align-items: center;
 }
 
-.compact-hero::before {
-  content: "";
-  position: absolute;
-  right: -610px;
-  top: -315px;
-  width: 900px;
-  height: 900px;
-  background: var(--signature);
-  opacity: 0.055;
-  pointer-events: none;
-  z-index: 0;
-  -webkit-mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
-  mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
-}
-
 .hero-text {
   position: relative;
   z-index: 1;
@@ -654,13 +639,6 @@ a.work-cover .work-action::after {
     padding-bottom: 78px;
   }
 
-  .compact-hero::before {
-    right: -470px;
-    top: -225px;
-    width: 690px;
-    height: 690px;
-  }
-
   .hero-text {
     max-width: 760px;
   }
@@ -716,14 +694,6 @@ a.work-cover .work-action::after {
   .compact-hero {
     padding: 58px 24px 72px;
     gap: 36px;
-  }
-
-  .compact-hero::before {
-    right: -330px;
-    top: -150px;
-    width: 500px;
-    height: 500px;
-    opacity: 0.045;
   }
 
   .hero-cover img {
