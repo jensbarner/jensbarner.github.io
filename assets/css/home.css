@@ -33,6 +33,21 @@
   max-width: 680px;
 }
 
+.hero-text::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 28px;
+  width: 300px;
+  height: 300px;
+  background: var(--signature);
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: -1;
+  -webkit-mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
+  mask: url("/assets/icons/brand/kompass.png") center / contain no-repeat;
+}
+
 .hero-text::before {
   content: "";
   display: block;
@@ -694,6 +709,10 @@ a.work-cover .work-action::after {
   .compact-hero {
     padding: 58px 24px 72px;
     gap: 36px;
+  }
+
+  .hero-text::after {
+    display: none;
   }
 
   .hero-cover img {
