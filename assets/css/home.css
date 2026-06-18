@@ -226,9 +226,13 @@ a.work-cover:hover {
   filter: saturate(0.9);
 }
 
-.work-cover.coming-soon.work-cover-preview {
+.work-cover-preview {
   opacity: 1;
   filter: none;
+}
+
+.work-cover-preview::before {
+  display: none;
 }
 
 .work-image-wrap {
@@ -284,31 +288,29 @@ a.work-cover:hover img {
 }
 
 .work-preview-stack {
-  position: relative;
-  width: min(100%, 170px);
+  width: min(100%, 190px);
   height: 215px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px;
 }
 
 .work-preview-stack picture {
-  position: absolute;
-  inset: auto;
-  width: 118px;
+  width: auto;
+  flex: 0 0 auto;
 }
 
 .work-preview-stack picture:first-child {
-  left: 0;
-  bottom: 0;
-  z-index: 2;
+  width: 108px;
 }
 
 .work-preview-stack picture:last-child {
-  right: 0;
-  bottom: 16px;
-  z-index: 1;
+  width: 74px;
 }
 
 .work-preview-stack img {
-  max-height: 190px;
+  max-height: 160px;
 }
 
 .work-type {
