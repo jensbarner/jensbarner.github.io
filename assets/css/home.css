@@ -226,7 +226,7 @@ a.work-cover:hover {
   filter: saturate(0.9);
 }
 
-.work-cover-preview {
+.work-cover.coming-soon.work-cover-preview {
   opacity: 1;
   filter: none;
 }
