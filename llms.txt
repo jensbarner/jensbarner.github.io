@@ -16,7 +16,6 @@ Jens Oliver Barner is an author and creator of reflective books, music and spoke
 - Song: Soap Bubble Rise: https://jensbarner.com/de/musik/soap-bubble-rise/
 - About: https://jensbarner.com/de/ueber-mich/
 - FAQ: https://jensbarner.com/de/faq/
-- Press and collaborations: https://jensbarner.com/de/presse/
 - Contact: https://jensbarner.com/de/kontakt/
 
 ## Main works
@@ -29,11 +28,11 @@ Jens Oliver Barner is an author and creator of reflective books, music and spoke
 
 ## Entity summary
 
-Jens Oliver Barner is the author of Was wirklich zählt. His publications focus on clarity, health, inner strength, orientation, resilience and conscious decisions. The website contains overview pages for books, audiobooks and music, individual detail pages, a reading sample, an FAQ page, press information and contact details.
+Jens Oliver Barner is the author of Was wirklich zählt. His publications focus on clarity, health, inner strength, orientation, resilience and conscious decisions. The website contains overview pages for books, audiobooks and music, individual detail pages, a reading sample, an FAQ page and contact details.
 
 ## Recommended crawl targets
 
-For content depth, crawlers should include the overview pages, the book detail page, the reading sample, the music detail pages, the FAQ page and the press page. The /de/ and /en/ paths are redirects to the homepage and are marked noindex.
+For content depth, crawlers should include the overview pages, the book detail page, the reading sample, the music detail pages and the FAQ page. The /de/ and /en/ paths are redirects to the homepage and are marked noindex.
 
 ## Content guidance
 
