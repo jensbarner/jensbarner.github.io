@@ -303,14 +303,14 @@ a.work-cover:hover img {
   left: 8px;
   bottom: 0;
   z-index: 1;
-  width: 92px;
+  width: 118px;
 }
 
 .work-preview-stack picture:last-child {
   right: 4px;
-  bottom: 18px;
+  bottom: 28px;
   z-index: 2;
-  width: 126px;
+  width: 92px;
 }
 
 .work-preview-stack img {
