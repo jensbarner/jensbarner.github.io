@@ -45,9 +45,8 @@
   position: relative;
   overflow: hidden;
   padding: 34px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(251,250,245,0.92));
-  border: 1px solid rgba(47,102,95,0.15);
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: 0 12px 30px rgba(32,53,66,0.06);
 }

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  initThemeSwitch();
   initMobileNavigation();
   initAuthorGallery();
   initCookieConsent();
@@ -11,6 +12,62 @@ const analyticsConfig = {
   storageKey: "job_cookie_consent_v1",
   sessionRejectedKey: "job_cookie_rejected_session_v1"
 };
+
+const themeConfig = {
+  storageKey: "job_theme_preference_v1",
+  options: ["auto", "light", "dark"]
+};
+
+applyStoredTheme();
+
+function applyStoredTheme() {
+  const storedTheme = window.localStorage.getItem(themeConfig.storageKey);
+  const theme = themeConfig.options.includes(storedTheme) ? storedTheme : "auto";
+  applyTheme(theme);
+}
+
+function applyTheme(theme) {
+  if (theme === "auto") {
+    document.documentElement.removeAttribute("data-theme");
+  } else {
+    document.documentElement.setAttribute("data-theme", theme);
+  }
+}
+
+function initThemeSwitch() {
+  const buttons = document.querySelectorAll("[data-theme-option]");
+  if (!buttons.length) return;
+
+  const storedTheme = window.localStorage.getItem(themeConfig.storageKey);
+  const activeTheme = themeConfig.options.includes(storedTheme) ? storedTheme : "auto";
+
+  updateThemeButtons(activeTheme, buttons);
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const nextTheme = button.getAttribute("data-theme-option");
+      if (!themeConfig.options.includes(nextTheme)) return;
+
+      if (nextTheme === "auto") {
+        window.localStorage.removeItem(themeConfig.storageKey);
+      } else {
+        window.localStorage.setItem(themeConfig.storageKey, nextTheme);
+      }
+
+      applyTheme(nextTheme);
+      updateThemeButtons(nextTheme, buttons);
+    });
+  });
+}
+
+function updateThemeButtons(activeTheme, buttons) {
+  buttons.forEach(button => {
+    button.setAttribute(
+      "aria-pressed",
+      String(button.getAttribute("data-theme-option") === activeTheme)
+    );
+  });
+}
 
 function initMobileNavigation() {
   const header = document.querySelector(".site-header");

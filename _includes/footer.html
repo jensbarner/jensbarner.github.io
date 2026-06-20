@@ -51,6 +51,17 @@
       <button class="footer-cookie-settings" type="button" data-cookie-settings>
         {% if is_english %}Cookie settings{% else %}Cookie-Einstellungen{% endif %}
       </button>
+      <div class="theme-switch" aria-label="{% if is_english %}Color theme{% else %}Farbschema{% endif %}">
+        <button type="button" data-theme-option="auto" aria-pressed="true">
+          {% if is_english %}Auto{% else %}Auto{% endif %}
+        </button>
+        <button type="button" data-theme-option="light" aria-pressed="false">
+          {% if is_english %}Light{% else %}Hell{% endif %}
+        </button>
+        <button type="button" data-theme-option="dark" aria-pressed="false">
+          {% if is_english %}Dark{% else %}Dunkel{% endif %}
+        </button>
+      </div>
       <a href="/de/impressum/">{% if is_english %}Legal notice{% else %}Impressum{% endif %}</a>
       <a href="/de/datenschutz/">{% if is_english %}Privacy{% else %}Datenschutz{% endif %}</a>
     </div>

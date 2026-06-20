@@ -23,9 +23,8 @@
   max-width: 320px;
   margin-top: 18px;
   padding: 18px 20px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(251,250,245,0.9));
-  border: 1px solid rgba(47,102,95,0.16);
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   color: inherit;
   text-decoration: none;
@@ -128,8 +127,8 @@
 .book-highlight {
   margin: 50px 0;
   padding: 40px;
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(47,102,95,0.16);
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: 0 18px 42px rgba(32,53,66,0.08);
 }
@@ -145,8 +144,8 @@
 .book-fit {
   margin: 56px 0 12px;
   padding: 34px 36px;
-  background: rgba(255,255,255,0.9);
-  border: 1px solid rgba(47,102,95,0.16);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: 0 16px 38px rgba(32,53,66,0.07);
 }
@@ -188,9 +187,8 @@
 .book-origin {
   margin: 38px 0 12px;
   padding: 34px 36px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.94), rgba(251,250,245,0.88));
-  border: 1px solid rgba(182,138,90,0.18);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
 }
 
@@ -212,8 +210,8 @@
 
 .book-origin-stats div {
   padding: 18px 16px;
-  background: rgba(255,255,255,0.78);
-  border: 1px solid rgba(47,102,95,0.12);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   text-align: center;
 }
@@ -238,8 +236,8 @@
 .book-data {
   margin: 38px 0 12px;
   padding: 34px 36px;
-  background: rgba(255,255,255,0.9);
-  border: 1px solid rgba(47,102,95,0.16);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
 }
 
