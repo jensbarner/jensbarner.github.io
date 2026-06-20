@@ -1,3 +1,8 @@
+{% assign is_english = false %}
+{% if page.url contains '/en/' %}
+  {% assign is_english = true %}
+{% endif %}
+
 <header class="site-header">
   <div class="site-header-inner">
 
@@ -6,32 +11,32 @@
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-      <span>Menü</span>
+      <span>{% if is_english %}Menu{% else %}Menü{% endif %}</span>
     </button>
 
     <nav class="navigation" id="primary-navigation" aria-label="Hauptnavigation">
 
       <div class="nav-dropdown">
-        <a href="/de/buecher/" class="nav-dropdown-trigger">Bücher</a>
+        <a href="/de/buecher/" class="nav-dropdown-trigger">{% if is_english %}Books{% else %}Bücher{% endif %}</a>
         <div class="nav-dropdown-menu">
-          <a href="/de/buecher/">Alle Bücher</a>
+          <a href="/de/buecher/">{% if is_english %}All books{% else %}Alle Bücher{% endif %}</a>
           <a href="/de/buecher/was-wirklich-zaehlt/">Was wirklich zählt</a>
-          <span class="nav-disabled">What Really Matters · Geplant</span>
+          <span class="nav-disabled">What Really Matters · {% if is_english %}Planned{% else %}Geplant{% endif %}</span>
         </div>
       </div>
 
       <div class="nav-dropdown">
-        <a href="/de/audiobooks/" class="nav-dropdown-trigger">Hörbücher</a>
+        <a href="/de/audiobooks/" class="nav-dropdown-trigger">{% if is_english %}Audiobooks{% else %}Hörbücher{% endif %}</a>
         <div class="nav-dropdown-menu">
-          <a href="/de/audiobooks/">Alle Hörbücher</a>
-          <span class="nav-disabled">Was wirklich zählt · Geplant</span>
+          <a href="/de/audiobooks/">{% if is_english %}All audiobooks{% else %}Alle Hörbücher{% endif %}</a>
+          <span class="nav-disabled">Was wirklich zählt · {% if is_english %}Planned{% else %}Geplant{% endif %}</span>
         </div>
       </div>
 
       <div class="nav-dropdown">
-        <a href="/de/musik/" class="nav-dropdown-trigger">Musik</a>
+        <a href="/de/musik/" class="nav-dropdown-trigger">{% if is_english %}Music{% else %}Musik{% endif %}</a>
         <div class="nav-dropdown-menu">
-          <a href="/de/musik/">Alle Musik</a>
+          <a href="/de/musik/">{% if is_english %}All music{% else %}Alle Musik{% endif %}</a>
           <a href="/de/musik/what-really-matters/">What Really Matters</a>
           <a href="/de/musik/soap-bubble-rise/">Soap Bubble Rise</a>
         </div>
@@ -40,12 +45,18 @@
       <div class="nav-dropdown">
         <a href="/de/ueber-mich/" class="nav-dropdown-trigger">Info</a>
         <div class="nav-dropdown-menu">
-          <a href="/de/ueber-mich/">Über mich</a>
+          <a href="/de/ueber-mich/">{% if is_english %}About{% else %}Über mich{% endif %}</a>
           <a href="/de/faq/">FAQ</a>
         </div>
       </div>
 
-      <a class="nav-contact" href="/de/kontakt/">Kontakt</a>
+      <a class="nav-contact" href="/de/kontakt/">{% if is_english %}Contact{% else %}Kontakt{% endif %}</a>
+
+      <div class="language-switch" aria-label="{% if is_english %}Language{% else %}Sprache{% endif %}">
+        <a class="{% unless is_english %}is-active{% endunless %}" href="/" lang="de" {% unless is_english %}aria-current="true"{% endunless %}>DE</a>
+        <span aria-hidden="true">|</span>
+        <a class="{% if is_english %}is-active{% endif %}" href="/en/" lang="en" {% if is_english %}aria-current="true"{% endif %}>EN</a>
+      </div>
 
     </nav>
 

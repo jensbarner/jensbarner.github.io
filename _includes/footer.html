@@ -1,33 +1,38 @@
+{% assign is_english = false %}
+{% if page.url contains '/en/' %}
+  {% assign is_english = true %}
+{% endif %}
+
 <footer class="site-footer">
 
   <div class="site-footer-inner">
 
     <div class="footer-brand">
-      <a class="footer-logo" href="/" aria-label="Zur Startseite">
+      <a class="footer-logo" href="{% if is_english %}/en/{% else %}/{% endif %}" aria-label="{% if is_english %}Home{% else %}Zur Startseite{% endif %}">
         Jens Oliver Barner
       </a>
       <p>
-        Bücher, Musik und Gedanken über Klarheit, Gesundheit und innere Stärke.
+        {% if is_english %}Books, music and thoughts about clarity, health and inner strength.{% else %}Bücher, Musik und Gedanken über Klarheit, Gesundheit und innere Stärke.{% endif %}
       </p>
-      <a class="footer-cta" href="/#werke">
-        Veröffentlichungen ansehen
+      <a class="footer-cta" href="{% if is_english %}/en/#works{% else %}/#werke{% endif %}">
+        {% if is_english %}View publications{% else %}Veröffentlichungen ansehen{% endif %}
       </a>
     </div>
 
-    <nav class="footer-links" aria-label="Footer-Navigation">
+    <nav class="footer-links" aria-label="{% if is_english %}Footer navigation{% else %}Footer-Navigation{% endif %}">
 
       <div class="footer-column">
-        <h3>Entdecken</h3>
-        <a href="/de/buecher/">Bücher</a>
-        <a href="/de/audiobooks/">Hörbücher</a>
-        <a href="/de/musik/">Musik</a>
+        <h3>{% if is_english %}Explore{% else %}Entdecken{% endif %}</h3>
+        <a href="/de/buecher/">{% if is_english %}Books{% else %}Bücher{% endif %}</a>
+        <a href="/de/audiobooks/">{% if is_english %}Audiobooks{% else %}Hörbücher{% endif %}</a>
+        <a href="/de/musik/">{% if is_english %}Music{% else %}Musik{% endif %}</a>
       </div>
 
       <div class="footer-column">
         <h3>Navigation</h3>
-        <a href="/de/ueber-mich/">Über mich</a>
+        <a href="/de/ueber-mich/">{% if is_english %}About{% else %}Über mich{% endif %}</a>
         <a href="/de/faq/">FAQ</a>
-        <a href="/de/kontakt/">Kontakt</a>
+        <a href="/de/kontakt/">{% if is_english %}Contact{% else %}Kontakt{% endif %}</a>
       </div>
 
       <div class="footer-column">
@@ -44,10 +49,10 @@
     <p>© 2026 Jens Oliver Barner</p>
     <div class="footer-legal">
       <button class="footer-cookie-settings" type="button" data-cookie-settings>
-        Cookie-Einstellungen
+        {% if is_english %}Cookie settings{% else %}Cookie-Einstellungen{% endif %}
       </button>
-      <a href="/de/impressum/">Impressum</a>
-      <a href="/de/datenschutz/">Datenschutz</a>
+      <a href="/de/impressum/">{% if is_english %}Legal notice{% else %}Impressum{% endif %}</a>
+      <a href="/de/datenschutz/">{% if is_english %}Privacy{% else %}Datenschutz{% endif %}</a>
     </div>
   </div>
 

@@ -315,6 +315,31 @@ section[id] {
   border-color: rgba(47,102,95,0.36);
 }
 
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.language-switch a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.language-switch a:hover {
+  color: var(--signature-dark);
+}
+
+.language-switch a.is-active {
+  color: var(--signature-dark);
+}
+
 /* ==================================================
    DROPDOWN
 ================================================== */
@@ -880,6 +905,11 @@ section[id] {
     justify-content: center;
     margin-top: 8px;
     padding: 13px 12px;
+  }
+
+  .language-switch {
+    justify-content: center;
+    padding: 13px 12px 4px;
   }
 
   .navigation > a::after,
