@@ -235,6 +235,53 @@
   line-height: 1.2;
 }
 
+.book-data {
+  margin: 38px 0 12px;
+  padding: 34px 36px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(47,102,95,0.16);
+  border-radius: var(--radius);
+}
+
+.book-data h2 {
+  margin-bottom: 22px;
+  font-size: clamp(1.65rem, 2.4vw, 2.25rem);
+}
+
+.book-data table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.book-data tr {
+  border-bottom: 1px solid var(--line);
+}
+
+.book-data tr:last-child {
+  border-bottom: 0;
+}
+
+.book-data th,
+.book-data td {
+  padding: 13px 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.book-data th {
+  width: 42%;
+  padding-right: 24px;
+  color: var(--signature);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.book-data td {
+  color: var(--ink-soft);
+}
+
 .book-cta {
   display: flex;
   flex-wrap: wrap;
@@ -265,6 +312,10 @@
   .book-origin {
     padding: 30px 24px;
   }
+
+  .book-data {
+    padding: 30px 24px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -274,5 +325,20 @@
 
   .book-origin-stats {
     grid-template-columns: 1fr;
+  }
+
+  .book-data th,
+  .book-data td {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .book-data th {
+    padding-bottom: 2px;
+  }
+
+  .book-data td {
+    padding-top: 0;
   }
 }
