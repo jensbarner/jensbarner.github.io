@@ -296,6 +296,25 @@ section[id] {
   width: 100%;
 }
 
+.navigation > a.nav-contact {
+  padding: 10px 14px;
+  color: var(--signature-dark);
+  background: rgba(47,102,95,0.06);
+  border: 1px solid rgba(47,102,95,0.24);
+  border-radius: var(--radius);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.navigation > a.nav-contact::after {
+  display: none;
+}
+
+.navigation > a.nav-contact:hover {
+  color: var(--signature-dark);
+  background: rgba(47,102,95,0.11);
+  border-color: rgba(47,102,95,0.36);
+}
+
 /* ==================================================
    DROPDOWN
 ================================================== */
@@ -855,6 +874,12 @@ section[id] {
   .nav-dropdown-trigger {
     padding: 13px 12px;
     border-radius: var(--radius);
+  }
+
+  .navigation > a.nav-contact {
+    justify-content: center;
+    margin-top: 8px;
+    padding: 13px 12px;
   }
 
   .navigation > a::after,
