@@ -658,24 +658,57 @@ a.work-cover .work-action::after {
   gap: 40px;
 
   background:
-    linear-gradient(135deg, var(--surface-strong), var(--surface));
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--signature);
+    linear-gradient(135deg, var(--signature-dark), var(--ink));
   border-radius: calc(var(--radius) + 6px);
-  box-shadow: var(--shadow-soft);
-  color: var(--ink);
+  color: white;
 }
 
 .contact-teaser h2 {
-  color: var(--ink);
+  color: white;
 }
 
 .contact-teaser p {
-  color: var(--ink-soft);
+  color: rgba(255,255,255,0.78);
 }
 
 .contact-teaser .button {
   flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .contact-teaser {
+    background:
+      linear-gradient(135deg, var(--surface-strong), var(--surface));
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--signature);
+    box-shadow: var(--shadow-soft);
+    color: var(--ink);
+  }
+
+  :root:not([data-theme="light"]) .contact-teaser h2 {
+    color: var(--ink);
+  }
+
+  :root:not([data-theme="light"]) .contact-teaser p {
+    color: var(--ink-soft);
+  }
+}
+
+:root[data-theme="dark"] .contact-teaser {
+  background:
+    linear-gradient(135deg, var(--surface-strong), var(--surface));
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--signature);
+  box-shadow: var(--shadow-soft);
+  color: var(--ink);
+}
+
+:root[data-theme="dark"] .contact-teaser h2 {
+  color: var(--ink);
+}
+
+:root[data-theme="dark"] .contact-teaser p {
+  color: var(--ink-soft);
 }
 
 
