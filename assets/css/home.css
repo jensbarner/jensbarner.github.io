@@ -658,17 +658,20 @@ a.work-cover .work-action::after {
   gap: 40px;
 
   background:
-    linear-gradient(135deg, var(--signature-dark), var(--ink));
+    linear-gradient(135deg, var(--surface-strong), var(--surface));
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--signature);
   border-radius: calc(var(--radius) + 6px);
-  color: white;
+  box-shadow: var(--shadow-soft);
+  color: var(--ink);
 }
 
 .contact-teaser h2 {
-  color: white;
+  color: var(--ink);
 }
 
 .contact-teaser p {
-  color: rgba(255,255,255,0.78);
+  color: var(--ink-soft);
 }
 
 .contact-teaser .button {
