@@ -7,16 +7,27 @@ Jens Oliver Barner is an author and creator of reflective books, music and spoke
 ## Key pages
 
 - Home: https://jensbarner.com/
+- English home: https://jensbarner.com/en/
 - Books overview: https://jensbarner.com/de/buecher/
+- English books overview: https://jensbarner.com/en/books/
 - Book: Was wirklich zählt: https://jensbarner.com/de/buecher/was-wirklich-zaehlt/
+- English book page: https://jensbarner.com/en/books/was-wirklich-zaehlt/
 - Reading sample: https://jensbarner.com/de/buecher/was-wirklich-zaehlt/leseprobe/
+- English reading sample page: https://jensbarner.com/en/books/was-wirklich-zaehlt/reading-sample/
 - Audiobooks overview: https://jensbarner.com/de/audiobooks/
+- English audiobooks overview: https://jensbarner.com/en/audiobooks/
 - Music overview: https://jensbarner.com/de/musik/
+- English music overview: https://jensbarner.com/en/music/
 - Song: What Really Matters: https://jensbarner.com/de/musik/what-really-matters/
+- English song page: https://jensbarner.com/en/music/what-really-matters/
 - Song: Soap Bubble Rise: https://jensbarner.com/de/musik/soap-bubble-rise/
+- English song page: https://jensbarner.com/en/music/soap-bubble-rise/
 - About: https://jensbarner.com/de/ueber-mich/
+- English about page: https://jensbarner.com/en/about/
 - FAQ: https://jensbarner.com/de/faq/
+- English FAQ: https://jensbarner.com/en/faq/
 - Contact: https://jensbarner.com/de/kontakt/
+- English contact page: https://jensbarner.com/en/contact/
 
 ## Main works
 
@@ -32,7 +43,7 @@ Jens Oliver Barner is the author of Was wirklich zählt. His publications focus 
 
 ## Recommended crawl targets
 
-For content depth, crawlers should include the overview pages, the book detail page, the reading sample, the music detail pages and the FAQ page. The /de/ and /en/ paths are redirects to the homepage and are marked noindex.
+For content depth, crawlers should include the overview pages, the book detail page, the reading sample, the music detail pages and the FAQ page. The /en/ path contains English overview content. The /de/ path redirects to the homepage and is marked noindex.
 
 ## Content guidance
 

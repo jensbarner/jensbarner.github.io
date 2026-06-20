@@ -19,6 +19,10 @@
   text-transform: uppercase;
 }
 
+html[lang="en"] .music-platforms::before {
+  content: "Listen on";
+}
+
 .music-platforms a {
   display: flex;
   justify-content: center;

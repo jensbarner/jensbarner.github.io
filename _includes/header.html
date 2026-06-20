@@ -2,6 +2,39 @@
 {% if page.url contains '/en/' %}
   {% assign is_english = true %}
 {% endif %}
+{% assign de_url = '/' %}
+{% assign en_url = '/en/' %}
+{% if page.url contains '/de/buecher/was-wirklich-zaehlt/leseprobe/' or page.url contains '/en/books/was-wirklich-zaehlt/reading-sample/' %}
+  {% assign de_url = '/de/buecher/was-wirklich-zaehlt/leseprobe/' %}
+  {% assign en_url = '/en/books/was-wirklich-zaehlt/reading-sample/' %}
+{% elsif page.url contains '/de/buecher/was-wirklich-zaehlt/' or page.url contains '/en/books/was-wirklich-zaehlt/' %}
+  {% assign de_url = '/de/buecher/was-wirklich-zaehlt/' %}
+  {% assign en_url = '/en/books/was-wirklich-zaehlt/' %}
+{% elsif page.url contains '/de/buecher/' or page.url contains '/en/books/' %}
+  {% assign de_url = '/de/buecher/' %}
+  {% assign en_url = '/en/books/' %}
+{% elsif page.url contains '/de/audiobooks/' or page.url contains '/en/audiobooks/' %}
+  {% assign de_url = '/de/audiobooks/' %}
+  {% assign en_url = '/en/audiobooks/' %}
+{% elsif page.url contains '/de/musik/what-really-matters/' or page.url contains '/en/music/what-really-matters/' %}
+  {% assign de_url = '/de/musik/what-really-matters/' %}
+  {% assign en_url = '/en/music/what-really-matters/' %}
+{% elsif page.url contains '/de/musik/soap-bubble-rise/' or page.url contains '/en/music/soap-bubble-rise/' %}
+  {% assign de_url = '/de/musik/soap-bubble-rise/' %}
+  {% assign en_url = '/en/music/soap-bubble-rise/' %}
+{% elsif page.url contains '/de/musik/' or page.url contains '/en/music/' %}
+  {% assign de_url = '/de/musik/' %}
+  {% assign en_url = '/en/music/' %}
+{% elsif page.url contains '/de/ueber-mich/' or page.url contains '/en/about/' %}
+  {% assign de_url = '/de/ueber-mich/' %}
+  {% assign en_url = '/en/about/' %}
+{% elsif page.url contains '/de/faq/' or page.url contains '/en/faq/' %}
+  {% assign de_url = '/de/faq/' %}
+  {% assign en_url = '/en/faq/' %}
+{% elsif page.url contains '/de/kontakt/' or page.url contains '/en/contact/' %}
+  {% assign de_url = '/de/kontakt/' %}
+  {% assign en_url = '/en/contact/' %}
+{% endif %}
 
 <header class="site-header">
   <div class="site-header-inner">
@@ -17,45 +50,45 @@
     <nav class="navigation" id="primary-navigation" aria-label="Hauptnavigation">
 
       <div class="nav-dropdown">
-        <a href="/de/buecher/" class="nav-dropdown-trigger">{% if is_english %}Books{% else %}Bücher{% endif %}</a>
+        <a href="{% if is_english %}/en/books/{% else %}/de/buecher/{% endif %}" class="nav-dropdown-trigger">{% if is_english %}Books{% else %}Bücher{% endif %}</a>
         <div class="nav-dropdown-menu">
-          <a href="/de/buecher/">{% if is_english %}All books{% else %}Alle Bücher{% endif %}</a>
-          <a href="/de/buecher/was-wirklich-zaehlt/">Was wirklich zählt</a>
+          <a href="{% if is_english %}/en/books/{% else %}/de/buecher/{% endif %}">{% if is_english %}All books{% else %}Alle Bücher{% endif %}</a>
+          <a href="{% if is_english %}/en/books/was-wirklich-zaehlt/{% else %}/de/buecher/was-wirklich-zaehlt/{% endif %}">Was wirklich zählt</a>
           <span class="nav-disabled">What Really Matters · {% if is_english %}Planned{% else %}Geplant{% endif %}</span>
         </div>
       </div>
 
       <div class="nav-dropdown">
-        <a href="/de/audiobooks/" class="nav-dropdown-trigger">{% if is_english %}Audiobooks{% else %}Hörbücher{% endif %}</a>
+        <a href="{% if is_english %}/en/audiobooks/{% else %}/de/audiobooks/{% endif %}" class="nav-dropdown-trigger">{% if is_english %}Audiobooks{% else %}Hörbücher{% endif %}</a>
         <div class="nav-dropdown-menu">
-          <a href="/de/audiobooks/">{% if is_english %}All audiobooks{% else %}Alle Hörbücher{% endif %}</a>
+          <a href="{% if is_english %}/en/audiobooks/{% else %}/de/audiobooks/{% endif %}">{% if is_english %}All audiobooks{% else %}Alle Hörbücher{% endif %}</a>
           <span class="nav-disabled">Was wirklich zählt · {% if is_english %}Planned{% else %}Geplant{% endif %}</span>
         </div>
       </div>
 
       <div class="nav-dropdown">
-        <a href="/de/musik/" class="nav-dropdown-trigger">{% if is_english %}Music{% else %}Musik{% endif %}</a>
+        <a href="{% if is_english %}/en/music/{% else %}/de/musik/{% endif %}" class="nav-dropdown-trigger">{% if is_english %}Music{% else %}Musik{% endif %}</a>
         <div class="nav-dropdown-menu">
-          <a href="/de/musik/">{% if is_english %}All music{% else %}Alle Musik{% endif %}</a>
-          <a href="/de/musik/what-really-matters/">What Really Matters</a>
-          <a href="/de/musik/soap-bubble-rise/">Soap Bubble Rise</a>
+          <a href="{% if is_english %}/en/music/{% else %}/de/musik/{% endif %}">{% if is_english %}All music{% else %}Alle Musik{% endif %}</a>
+          <a href="{% if is_english %}/en/music/what-really-matters/{% else %}/de/musik/what-really-matters/{% endif %}">What Really Matters</a>
+          <a href="{% if is_english %}/en/music/soap-bubble-rise/{% else %}/de/musik/soap-bubble-rise/{% endif %}">Soap Bubble Rise</a>
         </div>
       </div>
 
       <div class="nav-dropdown">
-        <a href="/de/ueber-mich/" class="nav-dropdown-trigger">Info</a>
+        <a href="{% if is_english %}/en/about/{% else %}/de/ueber-mich/{% endif %}" class="nav-dropdown-trigger">Info</a>
         <div class="nav-dropdown-menu">
-          <a href="/de/ueber-mich/">{% if is_english %}About{% else %}Über mich{% endif %}</a>
-          <a href="/de/faq/">FAQ</a>
+          <a href="{% if is_english %}/en/about/{% else %}/de/ueber-mich/{% endif %}">{% if is_english %}About{% else %}Über mich{% endif %}</a>
+          <a href="{% if is_english %}/en/faq/{% else %}/de/faq/{% endif %}">FAQ</a>
         </div>
       </div>
 
-      <a class="nav-contact" href="/de/kontakt/">{% if is_english %}Contact{% else %}Kontakt{% endif %}</a>
+      <a class="nav-contact" href="{% if is_english %}/en/contact/{% else %}/de/kontakt/{% endif %}">{% if is_english %}Contact{% else %}Kontakt{% endif %}</a>
 
       <div class="language-switch" aria-label="{% if is_english %}Language{% else %}Sprache{% endif %}">
-        <a class="{% unless is_english %}is-active{% endunless %}" href="/" lang="de" {% unless is_english %}aria-current="true"{% endunless %}>DE</a>
+        <a class="{% unless is_english %}is-active{% endunless %}" href="{{ de_url }}" lang="de" {% unless is_english %}aria-current="true"{% endunless %}>DE</a>
         <span aria-hidden="true">|</span>
-        <a class="{% if is_english %}is-active{% endif %}" href="/en/" lang="en" {% if is_english %}aria-current="true"{% endif %}>EN</a>
+        <a class="{% if is_english %}is-active{% endif %}" href="{{ en_url }}" lang="en" {% if is_english %}aria-current="true"{% endif %}>EN</a>
       </div>
 
     </nav>

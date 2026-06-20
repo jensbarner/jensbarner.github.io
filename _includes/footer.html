@@ -23,16 +23,16 @@
 
       <div class="footer-column">
         <h3>{% if is_english %}Explore{% else %}Entdecken{% endif %}</h3>
-        <a href="/de/buecher/">{% if is_english %}Books{% else %}Bücher{% endif %}</a>
-        <a href="/de/audiobooks/">{% if is_english %}Audiobooks{% else %}Hörbücher{% endif %}</a>
-        <a href="/de/musik/">{% if is_english %}Music{% else %}Musik{% endif %}</a>
+        <a href="{% if is_english %}/en/books/{% else %}/de/buecher/{% endif %}">{% if is_english %}Books{% else %}Bücher{% endif %}</a>
+        <a href="{% if is_english %}/en/audiobooks/{% else %}/de/audiobooks/{% endif %}">{% if is_english %}Audiobooks{% else %}Hörbücher{% endif %}</a>
+        <a href="{% if is_english %}/en/music/{% else %}/de/musik/{% endif %}">{% if is_english %}Music{% else %}Musik{% endif %}</a>
       </div>
 
       <div class="footer-column">
         <h3>Navigation</h3>
-        <a href="/de/ueber-mich/">{% if is_english %}About{% else %}Über mich{% endif %}</a>
-        <a href="/de/faq/">FAQ</a>
-        <a href="/de/kontakt/">{% if is_english %}Contact{% else %}Kontakt{% endif %}</a>
+        <a href="{% if is_english %}/en/about/{% else %}/de/ueber-mich/{% endif %}">{% if is_english %}About{% else %}Über mich{% endif %}</a>
+        <a href="{% if is_english %}/en/faq/{% else %}/de/faq/{% endif %}">FAQ</a>
+        <a href="{% if is_english %}/en/contact/{% else %}/de/kontakt/{% endif %}">{% if is_english %}Contact{% else %}Kontakt{% endif %}</a>
       </div>
 
       <div class="footer-column">
