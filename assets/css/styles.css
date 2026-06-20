@@ -340,6 +340,10 @@ section[id] {
   color: var(--signature-dark);
 }
 
+.language-switch-mobile {
+  display: none;
+}
+
 /* ==================================================
    DROPDOWN
 ================================================== */
@@ -838,6 +842,7 @@ section[id] {
   .site-header-inner {
     position: relative;
     justify-content: space-between;
+    gap: 12px;
   }
 
   .logo {
@@ -870,6 +875,16 @@ section[id] {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+  }
+
+  .language-switch-mobile {
+    display: inline-flex;
+    margin-left: auto;
+    padding: 0 4px;
+  }
+
+  .language-switch-nav {
+    display: none;
   }
 
   .navigation {
@@ -905,11 +920,6 @@ section[id] {
     justify-content: center;
     margin-top: 8px;
     padding: 13px 12px;
-  }
-
-  .language-switch {
-    justify-content: center;
-    padding: 13px 12px 4px;
   }
 
   .navigation > a::after,
@@ -968,7 +978,7 @@ section[id] {
 
   .logo {
     gap: 10px;
-    font-size: 1.08rem;
+    font-size: 1rem;
   }
 
   .logo::before {
@@ -980,6 +990,18 @@ section[id] {
   .navigation {
     left: 16px;
     right: 16px;
+  }
+
+  .language-switch-mobile {
+    font-size: 0.72rem;
+    gap: 6px;
+  }
+
+  .nav-toggle {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0 12px;
+    font-size: 0.72rem;
   }
 
   .site-footer-inner {

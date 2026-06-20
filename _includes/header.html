@@ -43,6 +43,12 @@
       Jens Oliver Barner
     </a>
 
+    <div class="language-switch language-switch-mobile" aria-label="{% if is_english %}Language{% else %}Sprache{% endif %}">
+      <a class="{% unless is_english %}is-active{% endunless %}" href="{{ de_url }}" lang="de" {% unless is_english %}aria-current="true"{% endunless %}>DE</a>
+      <span aria-hidden="true">|</span>
+      <a class="{% if is_english %}is-active{% endif %}" href="{{ en_url }}" lang="en" {% if is_english %}aria-current="true"{% endif %}>EN</a>
+    </div>
+
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
       <span>{% if is_english %}Menu{% else %}Menü{% endif %}</span>
     </button>
@@ -85,7 +91,7 @@
 
       <a class="nav-contact" href="{% if is_english %}/en/contact/{% else %}/de/kontakt/{% endif %}">{% if is_english %}Contact{% else %}Kontakt{% endif %}</a>
 
-      <div class="language-switch" aria-label="{% if is_english %}Language{% else %}Sprache{% endif %}">
+      <div class="language-switch language-switch-nav" aria-label="{% if is_english %}Language{% else %}Sprache{% endif %}">
         <a class="{% unless is_english %}is-active{% endunless %}" href="{{ de_url }}" lang="de" {% unless is_english %}aria-current="true"{% endunless %}>DE</a>
         <span aria-hidden="true">|</span>
         <a class="{% if is_english %}is-active{% endif %}" href="{{ en_url }}" lang="en" {% if is_english %}aria-current="true"{% endif %}>EN</a>
