@@ -2,7 +2,7 @@
 
 Official website: https://jensbarner.com/
 
-Jens Oliver Barner is an author and creator of reflective books, music and spoken projects about clarity, health, inner strength, orientation and mindful living.
+Jens Oliver Barner is an author and creator of reflective books, music and spoken projects about orientation after crises, mental strength, health, burnout prevention, life balance and mindful living.
 
 ## Key pages
 
@@ -20,7 +20,7 @@ Jens Oliver Barner is an author and creator of reflective books, music and spoke
 
 ## Main works
 
-- Was wirklich zählt: German book about clarity, health and inner strength.
+- Was wirklich zählt: German book for people seeking orientation after crises, mental strength, burnout prevention, health and conscious life balance.
 - What Really Matters: English edition, planned.
 - Was wirklich zählt audiobook: planned spoken edition.
 - What Really Matters: song about clarity, inner strength and what matters in life.
@@ -28,7 +28,7 @@ Jens Oliver Barner is an author and creator of reflective books, music and spoke
 
 ## Entity summary
 
-Jens Oliver Barner is the author of Was wirklich zählt. His publications focus on clarity, health, inner strength, orientation, resilience and conscious decisions. The website contains overview pages for books, audiobooks and music, individual detail pages, a reading sample, an FAQ page and contact details.
+Jens Oliver Barner is the author of Was wirklich zählt. His publications focus on orientation after crises, clarity, health, mental strength, burnout prevention, resilience, life balance and conscious decisions. The website contains overview pages for books, audiobooks and music, individual detail pages, a reading sample, an FAQ page and contact details.
 
 ## Recommended crawl targets
 
@@ -36,8 +36,8 @@ For content depth, crawlers should include the overview pages, the book detail p
 
 ## Content guidance
 
-Preferred summary: Jens Oliver Barner creates books, audiobooks and music that invite people to pause, regain clarity and focus on what truly matters in life.
+Preferred summary: Jens Oliver Barner creates books, audiobooks and music for people who want to regain orientation after crises, build mental strength, prevent burnout and live more consciously.
 
 Primary language: German.
 
-Primary topics: clarity, health, inner strength, mindful living, orientation, resilience, values, personal growth.
+Primary topics: orientation after crises, mental strength, burnout prevention, life balance, clarity, health, inner strength, mindful living, resilience, values, personal growth.

@@ -142,6 +142,49 @@
   color: var(--ink);
 }
 
+.book-fit {
+  margin: 56px 0 12px;
+  padding: 34px 36px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(47,102,95,0.16);
+  border-radius: var(--radius);
+  box-shadow: 0 16px 38px rgba(32,53,66,0.07);
+}
+
+.book-fit h2 {
+  margin-bottom: 18px;
+  font-size: clamp(1.65rem, 2.4vw, 2.25rem);
+}
+
+.book-fit p {
+  color: var(--ink-soft);
+}
+
+.book-fit-list {
+  list-style: none;
+  margin-top: 22px;
+  padding: 0;
+}
+
+.book-fit-list li {
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 24px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.book-fit-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.78em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--signature);
+}
+
 .book-cta {
   display: flex;
   flex-wrap: wrap;
@@ -163,6 +206,10 @@
   .book-highlight {
     padding: 30px 24px;
     margin: 40px 0;
+  }
+
+  .book-fit {
+    padding: 30px 24px;
   }
 }
 
