@@ -65,7 +65,7 @@
           Anfragen freue ich mich &uuml;ber Ihre Nachricht.
         </p>
 
-        <form class="contact-form" action="https://formspree.io/f/mzdlpgqe" method="POST" data-contact-form data-contact-language="de" novalidate>
+        <form class="contact-form" action="https://formspree.io/f/mzdlpgqe" method="POST" autocomplete="on" data-contact-form data-contact-language="de" novalidate>
           <input type="hidden" name="_subject" value="Neue Nachricht von jensbarner.com">
 
           <div class="contact-honeypot" aria-hidden="true">
@@ -73,24 +73,24 @@
             <input id="website-de" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
           </div>
 
-          <label class="contact-field-half">
+          <label class="contact-field-half" for="contact-name-de">
             Name
-            <input type="text" name="name" autocomplete="name" required>
+            <input id="contact-name-de" type="text" name="name" autocomplete="name" required>
           </label>
 
-          <label class="contact-field-half">
+          <label class="contact-field-half" for="contact-email-de">
             E-Mail
-            <input type="email" name="email" autocomplete="email" required>
+            <input id="contact-email-de" type="email" name="email" autocomplete="email" required>
           </label>
 
-          <label class="contact-field-full">
+          <label class="contact-field-full" for="contact-subject-de">
             Betreff
-            <input type="text" name="subject" autocomplete="off">
+            <input id="contact-subject-de" type="text" name="subject" autocomplete="off">
           </label>
 
-          <label class="contact-field-full">
+          <label class="contact-field-full" for="contact-message-de">
             Nachricht
-            <textarea name="message" rows="7" required></textarea>
+            <textarea id="contact-message-de" name="message" rows="7" required></textarea>
           </label>
 
           <button class="button primary" type="submit">
