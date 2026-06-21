@@ -82,91 +82,92 @@
       </p>
     </div>
 
-    <div class="catalog-filter" data-catalog-filter aria-label="Filter songs">
-      <button type="button" data-filter-value="all" aria-pressed="true">All Songs</button>
-      <button type="button" data-filter-value="de">German</button>
-      <button type="button" data-filter-value="en">English</button>
-      <button type="button" data-filter-value="instrumental">Instrumental</button>
+    <div class="catalog-filters" data-catalog-filters aria-label="Filter songs">
+      <div class="catalog-filter-group" aria-label="Filter by language">
+        <span>Language</span>
+        <button type="button" data-filter-group="language" data-filter-value="all" aria-pressed="true">All</button>
+        <button type="button" data-filter-group="language" data-filter-value="de">German</button>
+        <button type="button" data-filter-group="language" data-filter-value="en">English</button>
+        <button type="button" data-filter-group="language" data-filter-value="instrumental">Instrumental</button>
+      </div>
+
+      <div class="catalog-filter-group" aria-label="Filter by status">
+        <span>Status</span>
+        <button type="button" data-filter-group="status" data-filter-value="all" aria-pressed="true">All</button>
+        <button type="button" data-filter-group="status" data-filter-value="released">Released</button>
+        <button type="button" data-filter-group="status" data-filter-value="planned">In preparation</button>
+      </div>
     </div>
 
     <p class="catalog-empty" data-filter-empty hidden>There is currently no song for this filter.</p>
 
-    <div class="catalog-filter-section" data-filter-section>
-      <div class="catalog-section-header">
-        <p class="eyebrow">In preparation</p>
-        <h2>Next Releases</h2>
-      </div>
-
-      <div class="catalog-grid">
-        <a class="catalog-card" href="/en/music/the-gift-of-life/" data-catalog-item data-filter-values="en">
-          <div class="catalog-cover is-square">
-            <picture>
-              <source srcset="/assets/images/songs/the_gift_of_life.webp" type="image/webp">
-              <img src="/assets/images/songs/the_gift_of_life.png" alt="Cover The Gift of Life" width="1200" height="1200" loading="eager" fetchpriority="high">
-            </picture>
-          </div>
-          <div>
-            <p class="catalog-meta">Song · English · In preparation</p>
-            <h2>The Gift of Life</h2>
-            <p>A dreamy pop song about gratitude, courage and the miracle of being here.</p>
-            <span class="catalog-status">Open song page</span>
-          </div>
-        </a>
-
-        <a class="catalog-card" href="/en/music/the-voice-inside/" data-catalog-item data-filter-values="en">
-          <div class="catalog-cover is-square">
-            <picture>
-              <source srcset="/assets/images/songs/the_voice_inside.webp" type="image/webp">
-              <img src="/assets/images/songs/the_voice_inside.png" alt="Cover The Voice Inside" width="1200" height="1200" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <div>
-            <p class="catalog-meta">Song · English · In preparation</p>
-            <h2>The Voice Inside</h2>
-            <p>An emotional folk-pop song about clarity, courage and the quiet voice of your own compass.</p>
-            <span class="catalog-status">Open song page</span>
-          </div>
-        </a>
-      </div>
+    <div class="catalog-section-header">
+      <p class="eyebrow">Songs</p>
+      <h2>All Songs</h2>
     </div>
 
-    <div class="catalog-filter-section" data-filter-section>
-      <div class="catalog-section-header catalog-section-spaced">
-        <p class="eyebrow">Released</p>
-        <h2>Current Songs</h2>
-      </div>
+    <div class="catalog-grid">
+      <a class="catalog-card is-unreleased" href="/en/music/the-gift-of-life/" data-catalog-item data-filter-language="en" data-filter-status="planned">
+        <div class="catalog-cover is-square">
+          <span class="catalog-badge">In preparation</span>
+          <picture>
+            <source srcset="/assets/images/songs/the_gift_of_life.webp" type="image/webp">
+            <img src="/assets/images/songs/the_gift_of_life.png" alt="Cover The Gift of Life" width="1200" height="1200" loading="eager" fetchpriority="high">
+          </picture>
+        </div>
+        <div>
+          <p class="catalog-meta">Song · English</p>
+          <h2>The Gift of Life</h2>
+          <p>A dreamy pop song about gratitude, courage and the miracle of being here.</p>
+          <span class="catalog-status">Open song page</span>
+        </div>
+      </a>
 
-      <div class="catalog-grid">
-        <a class="catalog-card" href="/en/music/what-really-matters/" data-catalog-item data-filter-values="en">
-          <div class="catalog-cover is-square">
-            <picture>
-              <source srcset="/assets/images/songs/what_really_matters.webp" type="image/webp">
-              <img src="/assets/images/songs/what_really_matters.png" alt="Cover What Really Matters" width="1254" height="1254" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <div>
-            <p class="catalog-meta">Song · English</p>
-            <h2>What Really Matters</h2>
-            <p>A calm song about clarity, inner strength and the question of what remains.</p>
-            <span class="catalog-status">Listen</span>
-          </div>
-        </a>
+      <a class="catalog-card is-unreleased" href="/en/music/the-voice-inside/" data-catalog-item data-filter-language="en" data-filter-status="planned">
+        <div class="catalog-cover is-square">
+          <span class="catalog-badge">In preparation</span>
+          <picture>
+            <source srcset="/assets/images/songs/the_voice_inside.webp" type="image/webp">
+            <img src="/assets/images/songs/the_voice_inside.png" alt="Cover The Voice Inside" width="1200" height="1200" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div>
+          <p class="catalog-meta">Song · English</p>
+          <h2>The Voice Inside</h2>
+          <p>An emotional folk-pop song about clarity, courage and the quiet voice of your own compass.</p>
+          <span class="catalog-status">Open song page</span>
+        </div>
+      </a>
 
-        <a class="catalog-card" href="/en/music/soap-bubble-rise/" data-catalog-item data-filter-values="instrumental">
-          <div class="catalog-cover is-square">
-            <picture>
-              <source srcset="/assets/images/songs/soap_bubble_rise.webp" type="image/webp">
-              <img src="/assets/images/songs/soap_bubble_rise.png" alt="Cover Soap Bubble Rise" width="1254" height="1254" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <div>
-            <p class="catalog-meta">Instrumental</p>
-            <h2>Soap Bubble Rise</h2>
-            <p>A cinematic track about fragile beginnings, movement and growth.</p>
-            <span class="catalog-status">Listen</span>
-          </div>
-        </a>
-      </div>
+      <a class="catalog-card" href="/en/music/what-really-matters/" data-catalog-item data-filter-language="en" data-filter-status="released">
+        <div class="catalog-cover is-square">
+          <picture>
+            <source srcset="/assets/images/songs/what_really_matters.webp" type="image/webp">
+            <img src="/assets/images/songs/what_really_matters.png" alt="Cover What Really Matters" width="1254" height="1254" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div>
+          <p class="catalog-meta">Song · English</p>
+          <h2>What Really Matters</h2>
+          <p>A calm song about clarity, inner strength and the question of what remains.</p>
+          <span class="catalog-status">Listen</span>
+        </div>
+      </a>
+
+      <a class="catalog-card" href="/en/music/soap-bubble-rise/" data-catalog-item data-filter-language="instrumental" data-filter-status="released">
+        <div class="catalog-cover is-square">
+          <picture>
+            <source srcset="/assets/images/songs/soap_bubble_rise.webp" type="image/webp">
+            <img src="/assets/images/songs/soap_bubble_rise.png" alt="Cover Soap Bubble Rise" width="1254" height="1254" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div>
+          <p class="catalog-meta">Instrumental</p>
+          <h2>Soap Bubble Rise</h2>
+          <p>A cinematic track about fragile beginnings, movement and growth.</p>
+          <span class="catalog-status">Listen</span>
+        </div>
+      </a>
     </div>
 
     <div class="catalog-actions">

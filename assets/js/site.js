@@ -236,32 +236,38 @@ const contactFormMessages = {
 };
 
 function initCatalogFilters() {
-  const filter = document.querySelector("[data-catalog-filter]");
+  const filter = document.querySelector("[data-catalog-filters]");
   if (!filter) return;
 
   const buttons = filter.querySelectorAll("[data-filter-value]");
   const items = document.querySelectorAll("[data-catalog-item]");
-  const sections = document.querySelectorAll("[data-filter-section]");
   const empty = document.querySelector("[data-filter-empty]");
 
   if (!buttons.length || !items.length) return;
 
-  function applyFilter(value) {
+  const activeFilters = {
+    language: "all",
+    status: "all"
+  };
+
+  function itemMatches(item) {
+    const language = item.getAttribute("data-filter-language") || "";
+    const status = item.getAttribute("data-filter-status") || "";
+
+    return Object.entries(activeFilters).every(([group, value]) => {
+      if (value === "all") return true;
+      return group === "language" ? language === value : status === value;
+    });
+  }
+
+  function applyFilters() {
     let visibleCount = 0;
 
     items.forEach(item => {
-      const values = (item.getAttribute("data-filter-values") || "")
-        .split(/\s+/)
-        .filter(Boolean);
-      const isVisible = value === "all" || values.includes(value);
+      const isVisible = itemMatches(item);
 
       item.hidden = !isVisible;
       if (isVisible) visibleCount += 1;
-    });
-
-    sections.forEach(section => {
-      const hasVisibleItem = Boolean(section.querySelector("[data-catalog-item]:not([hidden])"));
-      section.hidden = !hasVisibleItem;
     });
 
     if (empty) {
@@ -271,13 +277,17 @@ function initCatalogFilters() {
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
+      const group = button.getAttribute("data-filter-group") || "language";
       const value = button.getAttribute("data-filter-value") || "all";
+      activeFilters[group] = value;
 
       buttons.forEach(current => {
-        current.setAttribute("aria-pressed", String(current === button));
+        if (current.getAttribute("data-filter-group") === group) {
+          current.setAttribute("aria-pressed", String(current === button));
+        }
       });
 
-      applyFilter(value);
+      applyFilters();
     });
   });
 }
