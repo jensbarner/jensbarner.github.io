@@ -379,25 +379,36 @@ a.catalog-card .catalog-status::after {
     margin-top: -10px;
     margin-bottom: 30px;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
   }
 
   .catalog-filter-group {
+    flex-wrap: nowrap;
     justify-content: flex-start;
     width: 100%;
-    gap: 6px;
+    gap: 7px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .catalog-filter-group::-webkit-scrollbar {
+    display: none;
   }
 
   .catalog-filter-group span {
-    flex: 0 0 100%;
+    flex: 0 0 auto;
     font-size: 0.66rem;
+    line-height: 28px;
   }
 
   .catalog-filter-group button {
+    flex: 0 0 auto;
     min-height: 28px;
     padding: 6px 8px;
     font-size: 0.68rem;
     letter-spacing: 0.035em;
+    white-space: nowrap;
   }
 
   .catalog-card {
