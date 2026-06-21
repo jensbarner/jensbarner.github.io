@@ -173,6 +173,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body.nav-lock {
+  overflow: hidden;
+}
+
 ::selection {
   background: var(--signature-soft);
   color: var(--signature-dark);
@@ -1054,6 +1058,10 @@ section[id] {
     top: calc(100% + 1px);
     left: 24px;
     right: 24px;
+    max-height: calc(100dvh - 104px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
 
     display: none;
     flex-direction: column;

@@ -70,15 +70,27 @@ function initMobileNavigation() {
 
   if (!header || !toggle || !navigation) return;
 
+  const closeNavigation = () => {
+    header.classList.remove("is-open");
+    document.body.classList.remove("nav-lock");
+    toggle.setAttribute("aria-expanded", "false");
+  };
+
   toggle.addEventListener("click", () => {
     const isOpen = header.classList.toggle("is-open");
+    document.body.classList.toggle("nav-lock", isOpen);
     toggle.setAttribute("aria-expanded", String(isOpen));
   });
 
   navigation.addEventListener("click", event => {
     if (event.target instanceof HTMLAnchorElement) {
-      header.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
+      closeNavigation();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+      closeNavigation();
     }
   });
 }
