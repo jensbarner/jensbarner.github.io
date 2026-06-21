@@ -223,9 +223,9 @@ function getFormspreeError(result) {
 const contactFormMessages = {
   de: {
     sending: "Nachricht wird gesendet ...",
-    success: "Vielen Dank. Ihre Nachricht wurde gesendet.",
-    notConfigured: "Das Kontaktformular ist noch nicht mit Formspree verbunden. Bitte tragen Sie die Formspree Form-ID ein.",
-    error: "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt per E-Mail."
+    success: "Vielen Dank. Deine Nachricht wurde gesendet.",
+    notConfigured: "Das Kontaktformular ist noch nicht mit Formspree verbunden. Bitte trage die Formspree Form-ID ein.",
+    error: "Die Nachricht konnte nicht gesendet werden. Bitte versuche es erneut oder schreibe direkt per E-Mail."
   },
   en: {
     sending: "Sending message ...",
