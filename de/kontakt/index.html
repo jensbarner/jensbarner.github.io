@@ -57,14 +57,58 @@
 
     <div class="contact-grid" aria-label="Kontaktmöglichkeiten">
 
-      <article class="contact-card contact-card-primary">
+      <article class="contact-card contact-form-card contact-card-primary">
+        <p class="contact-meta">Nachricht</p>
+        <h2>Schreiben Sie mir</h2>
+        <p>
+          Nutzen Sie das Formular f&uuml;r R&uuml;ckmeldungen, Lesungen,
+          Kooperationen oder pers&ouml;nliche Anfragen.
+        </p>
+
+        <form class="contact-form" data-contact-form data-contact-language="de" novalidate>
+          <input type="hidden" name="submittedAt" value="">
+
+          <div class="contact-honeypot" aria-hidden="true">
+            <label for="website-de">Website</label>
+            <input id="website-de" type="text" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+
+          <label>
+            E-Mail
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+
+          <label>
+            Betreff
+            <input type="text" name="subject" autocomplete="off">
+          </label>
+
+          <label>
+            Nachricht
+            <textarea name="message" rows="7" required></textarea>
+          </label>
+
+          <button class="button primary" type="submit">
+            Nachricht senden
+          </button>
+
+          <p class="contact-form-status" aria-live="polite"></p>
+        </form>
+      </article>
+
+      <article class="contact-card">
         <p class="contact-meta">Direkt</p>
         <h2>E-Mail</h2>
         <p>
           Der beste Weg für persönliche Anfragen, Lesungen oder
           Kooperationen.
         </p>
-        <a class="button primary" href="mailto:info@jensbarner.com">
+        <a class="button secondary" href="mailto:info@jensbarner.com">
           info@jensbarner.com
         </a>
       </article>

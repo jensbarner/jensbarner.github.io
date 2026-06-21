@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initThemeSwitch();
   initMobileNavigation();
   initAuthorGallery();
+  initContactForms();
   protectImages();
 });
 
@@ -146,6 +147,81 @@ function initAuthorGallery() {
 
   restartTimer();
 }
+
+function initContactForms() {
+  const forms = document.querySelectorAll("[data-contact-form]");
+  if (!forms.length) return;
+
+  forms.forEach(form => {
+    const submittedAt = form.querySelector('input[name="submittedAt"]');
+    const status = form.querySelector(".contact-form-status");
+    const submitButton = form.querySelector('button[type="submit"]');
+    const language = form.getAttribute("data-contact-language") || "de";
+    const messages = contactFormMessages[language] || contactFormMessages.de;
+
+    if (submittedAt) {
+      submittedAt.value = String(Date.now());
+    }
+
+    form.addEventListener("submit", async event => {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      if (!status || !submitButton) return;
+
+      status.className = "contact-form-status";
+      status.textContent = messages.sending;
+      submitButton.disabled = true;
+
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+      payload.language = language;
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok || result.ok === false) {
+          throw new Error(result.message || messages.error);
+        }
+
+        form.reset();
+        if (submittedAt) {
+          submittedAt.value = String(Date.now());
+        }
+        status.classList.add("is-success");
+        status.textContent = messages.success;
+      } catch (error) {
+        status.classList.add("is-error");
+        status.textContent = messages.error;
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  });
+}
+
+const contactFormMessages = {
+  de: {
+    sending: "Nachricht wird gesendet ...",
+    success: "Vielen Dank. Ihre Nachricht wurde gesendet.",
+    error: "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt per E-Mail."
+  },
+  en: {
+    sending: "Sending message ...",
+    success: "Thank you. Your message has been sent.",
+    error: "The message could not be sent. Please try again or contact me directly by email."
+  }
+};
 
 function protectImages() {
   document.addEventListener("contextmenu", event => {
