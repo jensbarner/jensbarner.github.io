@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileNavigation();
   initAuthorGallery();
   initContactForms();
+  initCatalogFilters();
   protectImages();
 });
 
@@ -233,6 +234,53 @@ const contactFormMessages = {
     error: "The message could not be sent. Please try again or contact me directly by email."
   }
 };
+
+function initCatalogFilters() {
+  const filter = document.querySelector("[data-catalog-filter]");
+  if (!filter) return;
+
+  const buttons = filter.querySelectorAll("[data-filter-value]");
+  const items = document.querySelectorAll("[data-catalog-item]");
+  const sections = document.querySelectorAll("[data-filter-section]");
+  const empty = document.querySelector("[data-filter-empty]");
+
+  if (!buttons.length || !items.length) return;
+
+  function applyFilter(value) {
+    let visibleCount = 0;
+
+    items.forEach(item => {
+      const values = (item.getAttribute("data-filter-values") || "")
+        .split(/\s+/)
+        .filter(Boolean);
+      const isVisible = value === "all" || values.includes(value);
+
+      item.hidden = !isVisible;
+      if (isVisible) visibleCount += 1;
+    });
+
+    sections.forEach(section => {
+      const hasVisibleItem = Boolean(section.querySelector("[data-catalog-item]:not([hidden])"));
+      section.hidden = !hasVisibleItem;
+    });
+
+    if (empty) {
+      empty.hidden = visibleCount > 0;
+    }
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const value = button.getAttribute("data-filter-value") || "all";
+
+      buttons.forEach(current => {
+        current.setAttribute("aria-pressed", String(current === button));
+      });
+
+      applyFilter(value);
+    });
+  });
+}
 
 function protectImages() {
   document.addEventListener("contextmenu", event => {
