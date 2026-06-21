@@ -110,9 +110,12 @@
   margin-top: 28px;
 }
 
-.contact-form label {
+.contact-field {
   display: grid;
   gap: 8px;
+}
+
+.contact-field label {
   color: var(--ink);
   font-size: 0.94rem;
   font-weight: 700;
