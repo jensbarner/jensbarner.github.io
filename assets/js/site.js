@@ -153,15 +153,10 @@ function initContactForms() {
   if (!forms.length) return;
 
   forms.forEach(form => {
-    const submittedAt = form.querySelector('input[name="submittedAt"]');
     const status = form.querySelector(".contact-form-status");
     const submitButton = form.querySelector('button[type="submit"]');
     const language = form.getAttribute("data-contact-language") || "de";
     const messages = contactFormMessages[language] || contactFormMessages.de;
-
-    if (submittedAt) {
-      submittedAt.value = String(Date.now());
-    }
 
     form.addEventListener("submit", async event => {
       event.preventDefault();
@@ -177,27 +172,33 @@ function initContactForms() {
       status.textContent = messages.sending;
       submitButton.disabled = true;
 
+      const endpoint = form.getAttribute("action") || "";
+
+      if (!endpoint || endpoint.includes("FORM_ID_EINTRAGEN")) {
+        status.classList.add("is-error");
+        status.textContent = messages.notConfigured;
+        submitButton.disabled = false;
+        return;
+      }
+
       const formData = new FormData(form);
-      const payload = Object.fromEntries(formData.entries());
-      payload.language = language;
+      formData.append("language", language);
+      formData.append("page", window.location.href);
 
       try {
-        const response = await fetch("/api/contact", {
+        const response = await fetch(endpoint, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
+          headers: { Accept: "application/json" },
+          body: formData
         });
 
         const result = await response.json().catch(() => ({}));
 
         if (!response.ok || result.ok === false) {
-          throw new Error(result.message || messages.error);
+          throw new Error(getFormspreeError(result) || messages.error);
         }
 
         form.reset();
-        if (submittedAt) {
-          submittedAt.value = String(Date.now());
-        }
         status.classList.add("is-success");
         status.textContent = messages.success;
       } catch (error) {
@@ -210,15 +211,25 @@ function initContactForms() {
   });
 }
 
+function getFormspreeError(result) {
+  if (Array.isArray(result.errors) && result.errors.length) {
+    return result.errors.map(error => error.message || error.code).filter(Boolean).join(" ");
+  }
+
+  return result.error || result.message || "";
+}
+
 const contactFormMessages = {
   de: {
     sending: "Nachricht wird gesendet ...",
     success: "Vielen Dank. Ihre Nachricht wurde gesendet.",
+    notConfigured: "Das Kontaktformular ist noch nicht mit Formspree verbunden. Bitte tragen Sie die Formspree Form-ID ein.",
     error: "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt per E-Mail."
   },
   en: {
     sending: "Sending message ...",
     success: "Thank you. Your message has been sent.",
+    notConfigured: "The contact form is not connected to Formspree yet. Please add the Formspree form ID.",
     error: "The message could not be sent. Please try again or contact me directly by email."
   }
 };
