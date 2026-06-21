@@ -175,7 +175,7 @@
 .works-grid {
   margin-top: 52px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
   align-items: stretch;
 }
@@ -319,6 +319,43 @@ a.work-cover:hover img {
   background: var(--surface-strong);
 }
 
+.work-music-wrap {
+  align-items: center;
+}
+
+.work-music-stack {
+  position: relative;
+  width: min(100%, 212px);
+  height: 190px;
+}
+
+.work-music-stack picture {
+  position: absolute;
+  display: block;
+  width: 142px;
+}
+
+.work-music-stack picture:first-child {
+  left: 0;
+  bottom: 10px;
+  z-index: 2;
+}
+
+.work-music-stack picture:last-child {
+  right: 0;
+  top: 10px;
+  z-index: 1;
+}
+
+.work-music-stack img {
+  display: block;
+  width: 100%;
+  max-height: none;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
 .work-type {
   display: block;
   margin-bottom: 8px;
@@ -347,6 +384,14 @@ a.work-cover:hover img {
   font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1.25;
+}
+
+.work-note {
+  display: block;
+  margin-top: 7px;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.45;
 }
 
 .work-cover h3 {
