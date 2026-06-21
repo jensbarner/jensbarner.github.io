@@ -50,6 +50,50 @@ html[lang="en"] .music-platforms::before {
   box-shadow: var(--shadow-soft);
 }
 
+.music-platforms-pending {
+  padding: 20px;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.music-platforms-pending span {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.music-platforms-pending p {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.music-lyrics {
+  margin-top: 38px;
+  padding: 30px;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.music-lyrics h2 {
+  margin-bottom: 18px;
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
+}
+
+.music-content .music-lyrics p {
+  margin-bottom: 18px;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.music-content .music-lyrics p:last-child {
+  margin-bottom: 0;
+}
+
 .music-cta {
   display: flex;
   flex-wrap: wrap;
@@ -83,5 +127,9 @@ html[lang="en"] .music-platforms::before {
   .music-platforms a {
     min-height: 44px;
     font-size: 0.9rem;
+  }
+
+  .music-lyrics {
+    padding: 22px;
   }
 }

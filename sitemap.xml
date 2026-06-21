@@ -36,6 +36,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://jensbarner.com/en/music/the-gift-of-life/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://jensbarner.com/en/music/what-really-matters/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -82,6 +87,11 @@
   </url>
   <url>
     <loc>https://jensbarner.com/de/musik/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jensbarner.com/de/musik/the-gift-of-life/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

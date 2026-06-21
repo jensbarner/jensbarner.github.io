@@ -62,6 +62,11 @@
   gap: 28px;
 }
 
+.catalog-grid-featured {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 860px;
+}
+
 .catalog-card {
   position: relative;
   overflow: hidden;
