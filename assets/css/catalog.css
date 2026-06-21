@@ -377,12 +377,27 @@ a.catalog-card .catalog-status::after {
 
   .catalog-filters {
     margin-top: -10px;
-    margin-bottom: 34px;
-    align-items: stretch;
+    margin-bottom: 30px;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   .catalog-filter-group {
     justify-content: flex-start;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .catalog-filter-group span {
+    flex: 0 0 100%;
+    font-size: 0.66rem;
+  }
+
+  .catalog-filter-group button {
+    min-height: 28px;
+    padding: 6px 8px;
+    font-size: 0.68rem;
+    letter-spacing: 0.035em;
   }
 
   .catalog-card {
