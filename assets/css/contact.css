@@ -60,6 +60,10 @@
   padding: 38px;
 }
 
+.contact-faq-card {
+  grid-column: 2;
+}
+
 .contact-card-primary::before {
   content: "";
   position: absolute;
@@ -220,6 +224,10 @@
 
   .contact-form-card {
     grid-row: auto;
+  }
+
+  .contact-faq-card {
+    grid-column: auto;
   }
 
   .contact-card {
