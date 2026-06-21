@@ -521,7 +521,7 @@ section[id] {
 
   padding: 8px 12px;
 
-  color: rgba(36,55,70,0.45);
+  color: color-mix(in srgb, var(--ink) 56%, transparent);
 
   line-height: 1.25;
 }
