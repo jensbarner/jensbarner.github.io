@@ -8,7 +8,7 @@
 
 .contact-hero {
   max-width: 820px;
-  margin: 0 auto 56px;
+  margin: 0 auto 52px;
   text-align: center;
 }
 
@@ -34,11 +34,12 @@
 }
 
 .contact-grid {
-  max-width: 980px;
+  max-width: 1060px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 24px;
+  align-items: start;
 }
 
 .contact-form-card {
@@ -48,11 +49,15 @@
 .contact-card {
   position: relative;
   overflow: hidden;
-  padding: 34px;
+  padding: 30px;
   background: var(--surface-strong);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: 0 12px 30px rgba(32,53,66,0.06);
+}
+
+.contact-form-card {
+  padding: 38px;
 }
 
 .contact-card-primary::before {
@@ -100,8 +105,9 @@
 
 .contact-form {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 24px;
+  margin-top: 28px;
 }
 
 .contact-form label {
@@ -127,7 +133,7 @@
 }
 
 .contact-form textarea {
-  min-height: 160px;
+  min-height: 176px;
   resize: vertical;
 }
 
@@ -141,6 +147,12 @@
 .contact-form .button {
   justify-self: start;
   margin-top: 4px;
+}
+
+.contact-field-full,
+.contact-form .button,
+.contact-form-status {
+  grid-column: 1 / -1;
 }
 
 .contact-form .button[disabled] {
@@ -210,6 +222,10 @@
   .contact-card {
     padding: 28px;
     text-align: center;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
   }
 
   .contact-social {
