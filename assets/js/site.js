@@ -202,7 +202,7 @@ function initContactForms() {
         status.textContent = messages.success;
       } catch (error) {
         status.classList.add("is-error");
-        status.textContent = messages.error;
+        status.textContent = error.message || messages.error;
       } finally {
         submitButton.disabled = false;
       }

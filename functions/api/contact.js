@@ -84,8 +84,10 @@ export async function onRequestPost(context) {
     if (!response.ok) {
       const errorText = await response.text();
       console.error("Cloudflare Email Service error:", errorText);
+      const message = getEmailServiceMessage(response.status, errorText);
+
       return jsonResponse(
-        { ok: false, message: "The message could not be sent." },
+        { ok: false, message },
         502
       );
     }
@@ -111,6 +113,41 @@ function cleanField(value, maxLength) {
 
 function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function getEmailServiceMessage(status, errorText) {
+  const errorCode = parseCloudflareErrorCode(errorText);
+
+  if (status === 401) {
+    return "Cloudflare Email Sending: API token is missing or invalid.";
+  }
+
+  if (status === 403 && errorCode === 10102) {
+    return "Cloudflare Email Sending: API token lacks permission to send.";
+  }
+
+  if (status === 403 && errorCode === 10105) {
+    return "Cloudflare Email Sending is not enabled for this Cloudflare account.";
+  }
+
+  if (status === 403 && errorCode === 10203) {
+    return "Cloudflare Email Sending is disabled for this domain or account.";
+  }
+
+  if (status === 404) {
+    return "Cloudflare Email Sending: account or sending endpoint was not found.";
+  }
+
+  return `Cloudflare Email Sending returned HTTP ${status}.`;
+}
+
+function parseCloudflareErrorCode(errorText) {
+  try {
+    const data = JSON.parse(errorText);
+    return data?.errors?.[0]?.code || null;
+  } catch (error) {
+    return null;
+  }
 }
 
 function jsonResponse(body, status = 200) {
