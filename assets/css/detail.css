@@ -10,6 +10,7 @@
 
 .book-inner,
 .music-page-inner {
+  width: 100%;
   max-width: var(--max);
   margin: 0 auto;
 

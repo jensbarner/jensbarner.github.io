@@ -83,6 +83,20 @@ html[lang="en"] .music-platforms::before {
   font-size: clamp(1.45rem, 2vw, 1.9rem);
 }
 
+.music-lyrics h3 {
+  margin: 24px 0 10px;
+  color: var(--signature);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.music-lyrics h3:first-of-type {
+  margin-top: 0;
+}
+
 .music-content .music-lyrics p {
   margin-bottom: 18px;
   color: var(--ink);
