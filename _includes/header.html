@@ -16,6 +16,12 @@
 {% elsif page.url contains '/de/audiobooks/' or page.url contains '/en/audiobooks/' %}
   {% assign de_url = '/de/audiobooks/' %}
   {% assign en_url = '/en/audiobooks/' %}
+{% elsif page.url contains '/de/musik/the-gift-of-life/' or page.url contains '/en/music/the-gift-of-life/' %}
+  {% assign de_url = '/de/musik/the-gift-of-life/' %}
+  {% assign en_url = '/en/music/the-gift-of-life/' %}
+{% elsif page.url contains '/de/musik/the-voice-inside/' or page.url contains '/en/music/the-voice-inside/' %}
+  {% assign de_url = '/de/musik/the-voice-inside/' %}
+  {% assign en_url = '/en/music/the-voice-inside/' %}
 {% elsif page.url contains '/de/musik/what-really-matters/' or page.url contains '/en/music/what-really-matters/' %}
   {% assign de_url = '/de/musik/what-really-matters/' %}
   {% assign en_url = '/en/music/what-really-matters/' %}
@@ -76,6 +82,8 @@
         <a href="{% if is_english %}/en/music/{% else %}/de/musik/{% endif %}" class="nav-dropdown-trigger">{% if is_english %}Music{% else %}Musik{% endif %}</a>
         <div class="nav-dropdown-menu">
           <a href="{% if is_english %}/en/music/{% else %}/de/musik/{% endif %}">{% if is_english %}All music{% else %}Alle Musik{% endif %}</a>
+          <a href="{% if is_english %}/en/music/the-gift-of-life/{% else %}/de/musik/the-gift-of-life/{% endif %}">The Gift of Life</a>
+          <a href="{% if is_english %}/en/music/the-voice-inside/{% else %}/de/musik/the-voice-inside/{% endif %}">The Voice Inside</a>
           <a href="{% if is_english %}/en/music/what-really-matters/{% else %}/de/musik/what-really-matters/{% endif %}">What Really Matters</a>
           <a href="{% if is_english %}/en/music/soap-bubble-rise/{% else %}/de/musik/soap-bubble-rise/{% endif %}">Soap Bubble Rise</a>
         </div>
